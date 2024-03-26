@@ -54,7 +54,7 @@ void AfficherScore(SDL_Renderer* renderer, int scorePlayer1, TTF_Font* font) {
             printf("Erreur lors de la création de la texture du texte : %s\n", SDL_GetError());
         }
         else {
-            SDL_Rect textRect = { 600, 20, surfaceMessage->w, surfaceMessage->h };
+            SDL_Rect textRect = { 575, 20, surfaceMessage->w, surfaceMessage->h };
             SDL_RenderCopy(renderer, message, NULL, &textRect);
 
             // Libérer la surface et la texture

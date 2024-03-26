@@ -4,13 +4,15 @@
 #include <SDL.h>
 
 void AfficherVie(SDL_Renderer* renderer, TTF_Font* font);
+void Afichage();
+void AfficherNiveau(SDL_Renderer* renderer, TTF_Font* font);
+void AfficherStats(SDL_Renderer* renderer, TTF_Font* font);
 
 SDL_Rect playerShip;
 int Player1Life;
-
+niveauActuel;
 
 // Variables statistiques de partie :
-
 
 int nbTirs; // Nb de projectiles lancés 
 

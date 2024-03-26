@@ -18,6 +18,9 @@ int compteurliste = 0;
 int nbEnnemis = 10;
 int vitesseEnnemi = 1;
 
+niveauActuel = 1;
+int compteurVague = 0;
+
 // Fonction qui cr�e et affiche les ennemis
 SDL_Rect setEnnemi()
 {
@@ -30,6 +33,7 @@ SDL_Rect setEnnemi()
 
 int EnnemiManager()
 {
+   
     while (compteurEnnemi < 100)
     {
         ennemiListe[compteurEnnemi] = setEnnemi();
@@ -46,6 +50,12 @@ void UpdateEnnemiPosition()
 
         if (compteurliste == nbEnnemis)
         {
+            compteurVague += 1;
+            if (compteurVague % 3 == 0)
+            {
+                niveauActuel += 1;
+            }
+
             compteurEnnemi = 0;
             if (nbEnnemis >= 90)
             {

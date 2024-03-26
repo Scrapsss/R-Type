@@ -29,8 +29,7 @@ int main()
         CheckCollisions();
         CollisionWithShip();
 
-        AfficherScore(renderer, scorePlayer1, font);
-        AfficherVie(renderer, font);
+        Afichage(); // Fonction qui appelle toutes les fonctions d'affichage
 
         SDL_RenderPresent(renderer);
         compteurFrame += 1;

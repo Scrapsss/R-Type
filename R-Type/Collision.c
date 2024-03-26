@@ -20,7 +20,7 @@ void CheckCollisions()
 				{
 					projectilesListe[i].w = 0;
 					ennemiListe[j].w = 0;
-					scorePlayer1 += 1;
+					scorePlayer1 += 5;
 				}
 			}
 		}
