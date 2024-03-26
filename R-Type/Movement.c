@@ -104,6 +104,26 @@ void ShipManager()
 
 void UpdatePos()
 {
+    if (playerY <= 0)
+    {
+        StateUp = 0;
+    }
+
+    if (playerY >= 600 - 25)
+    {
+        StateDown = 0;
+    }
+
+    if (playerX <= 0)
+    {
+        StateLeft = 0;
+    }
+
+    if (playerX >= 1200 - 50)
+    {
+        StateRight = 0;
+    }
+
     playerX += playerDx * (StateRight - StateLeft);
     playerY += playerDy * (StateDown - StateUp);
 }

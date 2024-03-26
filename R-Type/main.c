@@ -13,8 +13,6 @@ int main()
     {
         ClearScreen();
 
-        
-
 
         ShipManager();
         UpdatePos();
