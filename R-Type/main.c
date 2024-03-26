@@ -8,6 +8,7 @@
 #include "Collision.h"
 #include "ScoreManager.h"
 #include "GameManager.h"
+#include "AffichageManager.h"
 
 int main()
 {

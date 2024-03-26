@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include "WindowManager.h"
 #include "ScoreManager.h"
+#include "AffichageManager.h"
 
 void TextInitializer()
 {

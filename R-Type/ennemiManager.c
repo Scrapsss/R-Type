@@ -8,6 +8,7 @@
 #include <time.h>
 #include <stdbool.h>
 #include "GameManager.h"
+#include "AffichageManager.h"
 
 // D�claration de la position des ennemis
 int ennemiX;

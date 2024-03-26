@@ -3,6 +3,7 @@
 #include "ennemiManager.h"
 #include "TirManager.h"
 #include "GameManager.h"
+#include "AffichageManager.h"
 
 scorePlayer1 = 0;
 

@@ -132,6 +132,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AffichageManager.c" />
     <ClCompile Include="Collision.c" />
     <ClCompile Include="ennemiManager.c" />
     <ClCompile Include="GameManager.c" />
@@ -143,6 +144,7 @@
     <ClCompile Include="WindowManager.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AffichageManager.h" />
     <ClInclude Include="Collision.h" />
     <ClInclude Include="ennemiManager.h" />
     <ClInclude Include="GameManager.h" />
