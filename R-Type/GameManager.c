@@ -98,7 +98,7 @@ void AfficherStats(SDL_Renderer* renderer, TTF_Font* font) {
         }
         else
         {
-            SDL_Rect textRect = { 400, 570, surfaceMessage->w, surfaceMessage->h};
+            SDL_Rect textRect = { 420, 570, surfaceMessage->w, surfaceMessage->h};
             SDL_RenderCopy(renderer, message, NULL, &textRect);
 
             // Libérer la surface et la texture
