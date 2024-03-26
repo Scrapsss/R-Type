@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "ennemiManager.h"
 #include "TirManager.h"
+#include "GameManager.h"
 
 scorePlayer1 = 0;
 
@@ -24,4 +25,21 @@ void CheckCollisions()
 			}
 		}
 	}
+}
+
+void CollisionWithShip()
+{
+	if (ennemiListe != NULL)
+	{
+		for (int i = 0; i < 100; i++)
+		{
+			SDL_bool collisionShip = SDL_HasIntersection(&ennemiListe[i], &playerShip);
+			if (collisionShip)
+			{
+				Player1Life -= 1;
+				ennemiListe[i].w = 0;
+			}
+		}
+	}
+	
 }

@@ -7,6 +7,7 @@
 #include "ennemiManager.h"
 #include "Collision.h"
 #include "ScoreManager.h"
+#include "GameManager.h"
 
 int main()
 {
@@ -22,7 +23,7 @@ int main()
 
         ShipManager();
         UpdatePos();
-        SDL_Rect playerShip = setShip(playerX, playerY, 50, 25);
+        playerShip = setShip(playerX, playerY, 50, 25);
 
 
         UpdateTirPosition();
@@ -30,8 +31,10 @@ int main()
         UpdateEnnemiPosition();
 
         CheckCollisions();
+        CollisionWithShip();
 
         AfficherScore(renderer, scorePlayer1, font);
+        AfficherVie(renderer, font);
 
         SDL_RenderPresent(renderer);
         compteurFrame += 1;

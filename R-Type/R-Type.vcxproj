@@ -134,6 +134,7 @@
   <ItemGroup>
     <ClCompile Include="Collision.c" />
     <ClCompile Include="ennemiManager.c" />
+    <ClCompile Include="GameManager.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="Movement.c" />
     <ClCompile Include="ScoreManager.c" />
@@ -144,6 +145,7 @@
   <ItemGroup>
     <ClInclude Include="Collision.h" />
     <ClInclude Include="ennemiManager.h" />
+    <ClInclude Include="GameManager.h" />
     <ClInclude Include="Movement.h" />
     <ClInclude Include="ScoreManager.h" />
     <ClInclude Include="setShip.h" />

@@ -6,6 +6,8 @@
 #include "ennemiManager.h"
 #include <stdlib.h>
 #include <time.h>
+#include <stdbool.h>
+#include "GameManager.h"
 
 // D�claration de la position des ennemis
 int ennemiX;
@@ -47,7 +49,7 @@ void UpdateEnnemiPosition()
                 continue;
             }
 
-            if (ennemiListe[i].x < 0)
+            if (ennemiListe[i].x < 0 )
             {
                 ennemiListe[i].w = 0;
                 continue;
