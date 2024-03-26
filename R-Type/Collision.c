@@ -16,6 +16,7 @@ void CheckCollisions()
 				if (collision)
 				{
 					projectilesListe[i].w = 0;
+					ennemiListe[j].w = 0;
 				}
 			}
 		}

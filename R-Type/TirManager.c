@@ -46,6 +46,12 @@ void UpdateTirPosition()
             {
                 continue;
             }
+
+            if (projectilesListe[i].w == 1200)
+            {
+                continue;
+            }
+
             projectilesListe[i].x += 12;
             SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
             SDL_RenderFillRect(renderer, &projectilesListe[i]);
