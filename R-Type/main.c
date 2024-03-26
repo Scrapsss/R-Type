@@ -5,6 +5,7 @@
 #include "Movement.h"
 #include "TirManager.h"
 #include "ennemiManager.h"
+#include "Collision.h"
 
 int main()
 {
@@ -26,12 +27,12 @@ int main()
         UpdateTirPosition();
         EnnemiManager();
         UpdateEnnemiPosition();
+
+        CheckCollisions();
         SDL_RenderPresent(renderer);
         compteurFrame += 1;
         SDL_Delay(10);
-
-        
+    
     }
-
     return 0;
 }
