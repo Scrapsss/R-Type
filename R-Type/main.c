@@ -4,6 +4,7 @@
 #include "setShip.h"
 #include "Movement.h"
 #include "TirManager.h"
+#include "ennemiManager.h"
 
 int main()
 {
@@ -24,6 +25,7 @@ int main()
             UpdateTirPosition();
         }
 
+        EnnemiManager();
 
         SDL_RenderPresent(renderer);
         compteurFrame += 1;
