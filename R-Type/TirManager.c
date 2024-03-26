@@ -29,6 +29,9 @@ int ProjectileManager(int compteur)
         projectilesListe[compteur] = setProjectiles();
         compteur += 1;
     }
+    else {
+        compteur = 0;
+    }
     
 
     return compteur;
@@ -47,13 +50,3 @@ void UpdateTirPosition()
         }
     }
 }
-
-
-
-
-
-
-
-// fonction quand je creer mon carre je l'ajoute a la liste des projectiles du jeux entre 0 et 100 objets check > 1200 = free
-// Il faut un fonction qui vient g�rer les collisions des tirs avec les ennemis et score, et une autre pour le destruction si traverse ecran ou si touche ennemi.
-

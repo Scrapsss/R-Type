@@ -27,16 +27,22 @@
     <ClCompile Include="WindowManager.c">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="TirManager.c">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Movement.h">
-      <Filter>Fichiers de ressources</Filter>
+      <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="setShip.h">
-      <Filter>Fichiers de ressources</Filter>
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="TirManager.h">
+      <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="WindowManager.h">
-      <Filter>Fichiers de ressources</Filter>
+      <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
