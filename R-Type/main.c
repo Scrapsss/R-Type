@@ -6,11 +6,12 @@
 #include "TirManager.h"
 #include "ennemiManager.h"
 #include "Collision.h"
+#include "ScoreManager.h"
 
 int main()
 {
     Initializer(); 
-    
+    TextInitializer();
 
 
     while (1)
@@ -29,6 +30,9 @@ int main()
         UpdateEnnemiPosition();
 
         CheckCollisions();
+
+        AfficherScore(renderer, scorePlayer1, font);
+
         SDL_RenderPresent(renderer);
         compteurFrame += 1;
         SDL_Delay(10);

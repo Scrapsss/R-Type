@@ -3,6 +3,8 @@
 #include "ennemiManager.h"
 #include "TirManager.h"
 
+scorePlayer1 = 0;
+
 void CheckCollisions()
 {
 	if (projectilesListe != NULL && ennemiListe != NULL)
@@ -17,6 +19,7 @@ void CheckCollisions()
 				{
 					projectilesListe[i].w = 0;
 					ennemiListe[j].w = 0;
+					scorePlayer1 += 1;
 				}
 			}
 		}
