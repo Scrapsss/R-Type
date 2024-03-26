@@ -31,16 +31,19 @@ int EnnemiManager()
             ennemiListe[compteurEnnemi] = setEnnemi();
             compteurEnnemi += 1; 
     }
-
     return compteurEnnemi;
 }
 
 void UpdateEnnemiPosition()
 {
-    for (int i = 0; i < nbEnnemis; i++)
+    if (ennemiListe != NULL)
     {
-        ennemiListe[i].x -= 3;
-        SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
-        SDL_RenderFillRect(renderer, &ennemiListe[i]);
+        for (int i = 0; i < nbEnnemis; i++)
+        {
+            ennemiListe[i].x -= 3;
+            SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
+            SDL_RenderFillRect(renderer, &ennemiListe[i]);
+        }
     }
+    
 }

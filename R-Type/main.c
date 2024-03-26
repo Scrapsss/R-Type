@@ -23,11 +23,7 @@ int main()
         SDL_Rect playerShip = setShip(playerX, playerY, 50, 25);
 
 
-        if (projectilesListe != NULL)
-        {
-            UpdateTirPosition();
-        }
-
+        UpdateTirPosition();
         EnnemiManager();
         UpdateEnnemiPosition();
         SDL_RenderPresent(renderer);

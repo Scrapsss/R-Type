@@ -38,14 +38,18 @@ int ProjectileManager(int compteur)
 
 void UpdateTirPosition()
 {
-    for (int i = 0; i < 100; i++)
+    if (projectilesListe != NULL)
     {
-        projectilesListe[i].x += 12;
-        SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
-        SDL_RenderFillRect(renderer, &projectilesListe[i]);
-        if (projectilesListe[i].x > 1200)
+        for (int i = 0; i < 100; i++)
         {
-            
+            if (projectilesListe[i].w == 0)
+            {
+                continue;
+            }
+            projectilesListe[i].x += 12;
+            SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
+            SDL_RenderFillRect(renderer, &projectilesListe[i]);
         }
     }
+    
 }
