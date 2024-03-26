@@ -9,7 +9,6 @@ int main()
 {
     Initializer();
 
-
     while (1)
     {
         ClearScreen();
@@ -29,6 +28,7 @@ int main()
 
 
         SDL_RenderPresent(renderer);
+        compteurFrame += 1;
         SDL_Delay(10);
 
         

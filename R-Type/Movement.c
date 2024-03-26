@@ -18,6 +18,7 @@ int StateRight = 0;
 int StateSpace = 0;
 
 int compteur = 0;
+int compteurFrame = 0;
 
 void KeyDownCheck(SDL_Event event)
 {
@@ -94,7 +95,10 @@ void ShipManager()
 
     if (StateSpace == 1)
     {
-        compteur = ProjectileManager(compteur);
+        if (compteurFrame % 8 == 1)
+        {
+            compteur = ProjectileManager(compteur);
+        }
     }
 }
 

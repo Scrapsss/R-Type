@@ -8,6 +8,8 @@ extern int playerY;
 extern int playerDx;
 extern int playerDy;
 
+extern int compteurFrame;
+
 void KeyDownCheck(SDL_Event event);
 void KeyUpCheck(SDL_Event event);
 void ShipManager();
