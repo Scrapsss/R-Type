@@ -8,52 +8,71 @@ int playerX = 100;
 int playerY = 300;
 
 // Déclaration de la vitesse du joueur
-int playerDx = 0;
-int playerDy = 0;
+int playerDx = 7;
+int playerDy = 7;
+
+int StateUp = 0;
+int StateDown = 0;
+int StateLeft = 0;
+int StateRight = 0;
+int StateSpace = 0;
 
 int compteur = 0;
 
 void KeyDownCheck(SDL_Event event)
 {
-    switch (event.key.keysym.sym)
+    if (event.key.keysym.sym == SDLK_UP)
     {
-    case SDLK_UP:
-        playerDy = -7;
-        break;
-    case SDLK_DOWN:
-        playerDy = 7;
-        break;
-    case SDLK_RIGHT:
-        playerDx = 7;
-        break;
-    case SDLK_LEFT:
-        playerDx = -7;
-        break;
-    case SDLK_SPACE:
+        StateUp = 1;
+    }
 
-        compteur = ProjectileManager(compteur);
-        break;
+    if (event.key.keysym.sym == SDLK_DOWN)
+    {
+        StateDown = 1;
+    }
 
-    default:
-        break;
+    if (event.key.keysym.sym == SDLK_RIGHT)
+    {
+        StateRight = 1;
+    }
+
+    if (event.key.keysym.sym == SDLK_LEFT)
+    {
+        StateLeft = 1;
+    }
+
+    if (event.key.keysym.sym == SDLK_SPACE)
+    {
+        StateSpace = 1;
     }
 }
 
 void KeyUpCheck(SDL_Event event)
 {
-    switch (event.key.keysym.sym)
+    if (event.key.keysym.sym == SDLK_UP)
     {
-    case SDLK_UP:
-    case SDLK_DOWN:
-        playerDy = 0;
-        break;
-    case SDLK_LEFT:
-    case SDLK_RIGHT:
-        playerDx = 0;
-        break;
-    default:
-        break;
+        StateUp = 0;
     }
+
+    if (event.key.keysym.sym == SDLK_DOWN)
+    {
+        StateDown = 0;
+    }
+    if (event.key.keysym.sym == SDLK_LEFT)
+    {
+        StateLeft = 0;
+    }
+
+    if (event.key.keysym.sym == SDLK_RIGHT)
+    {
+        StateRight = 0;
+    }
+
+    if (event.key.keysym.sym == SDLK_SPACE)
+    {
+        StateSpace = 0;
+    }
+
 }
 
 void ShipManager()
@@ -61,20 +80,26 @@ void ShipManager()
     SDL_Event event;
 
     while (SDL_PollEvent(&event)) {
-        switch (event.type)
+        
+        
+        if (event.type == SDL_KEYDOWN)
         {
-        case SDL_KEYDOWN:
             KeyDownCheck(event);
-            break;
-        case SDL_KEYUP:
-            KeyUpCheck(event);
-            break;
         }
+        if (event.type == SDL_KEYUP)
+        {
+            KeyUpCheck(event);
+        }
+    }
+
+    if (StateSpace == 1)
+    {
+        compteur = ProjectileManager(compteur);
     }
 }
 
 void UpdatePos()
 {
-    playerX += playerDx;
-    playerY += playerDy;
+    playerX += playerDx * (StateRight - StateLeft);
+    playerY += playerDy * (StateDown - StateUp);
 }
