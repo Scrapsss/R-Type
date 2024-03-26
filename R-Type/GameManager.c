@@ -5,6 +5,7 @@
 #include "ScoreManager.h"
 #include "GameManager.h"
 
+// On initialise la vie du joueur à 3
 Player1Life = 3;
 
 

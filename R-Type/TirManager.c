@@ -9,14 +9,13 @@
 int projectileX;
 int projectileY;
 
-
+nbTirs = 0;
 
 // Fonction qui cr�e et affiche les projectiles
 SDL_Rect setProjectiles()
 { 
     SDL_Rect projectile = {playerX + 50, playerY + 8, 20, 10};
-    
-    //SDL_RenderFillRect(renderer, &projectile);
+    nbTirs += 1;
 
     return projectile;
 }

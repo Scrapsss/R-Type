@@ -14,18 +14,14 @@ int main()
     Initializer(); 
     TextInitializer();
 
-
     while (1)
     {
         srand(time(NULL));
         ClearScreen();
 
-
         ShipManager();
         UpdatePos();
         playerShip = setShip(playerX, playerY, 50, 25);
-
-
         UpdateTirPosition();
         EnnemiManager();
         UpdateEnnemiPosition();

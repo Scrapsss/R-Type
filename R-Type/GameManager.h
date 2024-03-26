@@ -4,6 +4,15 @@
 #include <SDL.h>
 
 void AfficherVie(SDL_Renderer* renderer, TTF_Font* font);
+
 SDL_Rect playerShip;
 int Player1Life;
-bool hasTouchedShip;
+
+
+// Variables statistiques de partie :
+
+
+int nbTirs; // Nb de projectiles lancés 
+
+// Nb km parcouru (on peut utiliser compteurFrame)
+// Nb d'ennemis vaincus (on peut utiliser le score)

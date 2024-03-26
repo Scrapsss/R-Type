@@ -42,30 +42,7 @@ void UpdateEnnemiPosition()
 {
     if (ennemiListe != NULL)
     {
-        for (int i = 0; i < nbEnnemis; i++)
-        {
-            if (ennemiListe[i].w == 0)
-            {
-                continue;
-            }
-
-            if (ennemiListe[i].x < 0 )
-            {
-                ennemiListe[i].w = 0;
-                continue;
-            }
-
-            ennemiListe[i].x -= 3;
-            SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
-            SDL_RenderFillRect(renderer, &ennemiListe[i]);
-        }
-        for (int j = 0; j < nbEnnemis; j++)
-        {
-            if (ennemiListe[j].w == 0)
-            {
-                compteurliste += 1;
-            }
-        }
+        DeplacementEnnemi();
 
         if (compteurliste == nbEnnemis)
         {
@@ -86,4 +63,32 @@ void UpdateEnnemiPosition()
         }
         compteurliste = 0;
     }  
+}
+
+void DeplacementEnnemi()
+{
+    for (int i = 0; i < nbEnnemis; i++)
+    {
+        if (ennemiListe[i].w == 0)
+        {
+            continue;
+        }
+
+        if (ennemiListe[i].x < 0)
+        {
+            ennemiListe[i].w = 0;
+            continue;
+        }
+
+        ennemiListe[i].x -= 3;
+        SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
+        SDL_RenderFillRect(renderer, &ennemiListe[i]);
+    }
+    for (int j = 0; j < nbEnnemis; j++)
+    {
+        if (ennemiListe[j].w == 0)
+        {
+            compteurliste += 1;
+        }
+    }
 }
