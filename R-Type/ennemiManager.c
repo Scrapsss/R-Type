@@ -12,28 +12,24 @@ int ennemiX;
 int ennemiY;
 
 int compteurEnnemi = 0;
-int nbEnnemis = 5;
+int nbEnnemis = 10;
 
 // Fonction qui cr�e et affiche les ennemis
 SDL_Rect setEnnemi()
 {
-    srand(time(NULL));
-    ennemiY = (rand() % (500 - 100));
+    ennemiY = (rand() % (500));
+    ennemiX = (rand() % (300));
 
-    SDL_Rect ennemi = { 1300, 400 , 20, 10 };
+    SDL_Rect ennemi = { ennemiX+1400, ennemiY, 30, 30 };
     return ennemi;
 }
 
 int EnnemiManager()
 {
-
-    if (compteurEnnemi < nbEnnemis)
+    while (compteurEnnemi < nbEnnemis)
     {
-        ennemiListe[compteurEnnemi] = setEnnemi();
-        compteurEnnemi += 1;
-    }
-    else {
-        compteurEnnemi = 0;
+            ennemiListe[compteurEnnemi] = setEnnemi();
+            compteurEnnemi += 1; 
     }
 
     return compteurEnnemi;
@@ -43,8 +39,8 @@ void UpdateEnnemiPosition()
 {
     for (int i = 0; i < nbEnnemis; i++)
     {
-        ennemiListe[i].x -= 12;
-        SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
+        ennemiListe[i].x -= 3;
+        SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
         SDL_RenderFillRect(renderer, &ennemiListe[i]);
     }
 }

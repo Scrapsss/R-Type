@@ -8,10 +8,13 @@
 
 int main()
 {
-    Initializer();
+    Initializer(); 
+    
+
 
     while (1)
     {
+        srand(time(NULL));
         ClearScreen();
 
 
@@ -26,7 +29,7 @@ int main()
         }
 
         EnnemiManager();
-
+        UpdateEnnemiPosition();
         SDL_RenderPresent(renderer);
         compteurFrame += 1;
         SDL_Delay(10);
