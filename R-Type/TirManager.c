@@ -47,8 +47,9 @@ void UpdateTirPosition()
                 continue;
             }
 
-            if (projectilesListe[i].w == 1200)
+            if (projectilesListe[i].x >= 1200 - projectilesListe[i].w)
             {
+                projectilesListe[i].w = 0;
                 continue;
             }
 
