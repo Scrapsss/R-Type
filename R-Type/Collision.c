@@ -1,11 +1,13 @@
 #include <SDL.h>
 #include <stdio.h>
+#include <SDL_mixer.h>
 #include "ennemiManager.h"
 #include "TirManager.h"
 #include "GameManager.h"
 #include "AffichageManager.h"
 #include "Collision.h"
 #include "Movement.h"
+#include "WindowManager.h"
 
 scorePlayer1 = 0;
 int PlayerDeathState = 0;
@@ -22,6 +24,8 @@ void CheckCollisions()
 
 				if (collision)
 				{
+					Mix_Music* musique = setMusique();
+					Mix_PlayMusic(musique, 0);
 					projectilesListe[i].w = 0;
 					ennemiListe[j].w = 0;
 					scorePlayer1 += 5;

@@ -10,6 +10,7 @@
 #include "GameManager.h"
 #include "AffichageManager.h"
 #include "menuManager.h"
+#include <SDL_mixer.h>
 
 
 int main()
@@ -26,6 +27,9 @@ int main()
 
         ButtonMenu();
         Buttons();
+
+        
+
 
         while (Player1Life != 0)
         {

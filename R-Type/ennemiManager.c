@@ -1,5 +1,6 @@
 ﻿#include <stdio.h>
 #include <SDL.h>
+#include <SDL_mixer.h>
 #include "WindowManager.h"
 #include "Movement.h"
 #include "TirManager.h"
@@ -22,6 +23,7 @@ int vitesseEnnemi = 1;
 
 niveauActuel = 1;
 int compteurVague = 0;
+
 
 // Fonction qui cr�e et affiche les ennemis
 SDL_Rect setEnnemi()

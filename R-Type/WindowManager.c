@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <SDL.h>
+#include <SDL_mixer.h>
 #include "WindowManager.h"
 
 int InitWindow()
@@ -45,7 +46,27 @@ int Initializer()
     {
         window = CreateWindow(); //On crée la fenêtre
         renderer = CreateRenderer(window);
+        if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0) {
+            printf("Failed to initialize SDL_mixer: %s\n", Mix_GetError());
+            SDL_Quit();
+            return -1;
+        }
+
     }
+}
+
+Mix_Music* setMusique()
+{
+    Mix_Music* musique = NULL;
+
+    musique = Mix_LoadMUS("C:/Users/Scrap/Documents/Font/explosion_11.mp3");
+    if (musique == NULL) {
+        printf("Failed to load music: %s\n", Mix_GetError());
+
+        SDL_Quit();
+        return -1;
+    }
+    return musique;
 }
 
 void ClearScreen()
