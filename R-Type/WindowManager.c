@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <SDL.h>
 #include "WindowManager.h"
-
+#include "TextureManager.h"
 int InitWindow()
 {
     // init SDL
@@ -34,6 +34,7 @@ SDL_Window* CreateWindow()
         SDL_Quit();
         return -1;
     }
+    
     return window;
 }
 
@@ -45,12 +46,13 @@ int Initializer()
     {
         window = CreateWindow(); //On crée la fenêtre
         renderer = CreateRenderer(window);
+        
     }
 }
 
 void ClearScreen()
 {
     // Clear rendu + set white color 
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    
     SDL_RenderClear(renderer);
 }

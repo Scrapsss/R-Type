@@ -7,7 +7,7 @@
 #include "Movement.h"
 #include <SDL_ttf.h>
 #include <SDL.h>
-
+#include "ennemiManager.h"
 
 
 // On initialise la vie du joueur à 3
@@ -20,6 +20,7 @@ void Afichage()
     AfficherNiveau(renderer, font);
     AfficherScore(renderer, scorePlayer1, font);
     AfficherStats(renderer, font);
+    AfficherPourcentage();
 }
 
 // Affichage de le vie du joueur :
@@ -87,6 +88,11 @@ void AfficherStats(SDL_Renderer* renderer, TTF_Font* font) {
     SDL_Color textColor = { 255, 255, 255}; // Couleur du texte (blanc)
 
     char scoreText[100];
+
+    if (PlayerDeathState == 1)
+    {
+        compteurFrame = kmBeforeVague;
+    }
     snprintf(scoreText, sizeof(scoreText), "Shots Fired    :    %d            Kills    :    %d            km    :    %d", nbTirs, scorePlayer1 / 5, compteurFrame / 300);
 
     SDL_Surface* surfaceMessage = TTF_RenderText_Solid(font, scoreText, textColor);
@@ -120,3 +126,4 @@ void AfficherBordure()
     SDL_RenderFillRect(renderer, &bordureHaute);
     SDL_RenderFillRect(renderer, &bordureBasse);
 }
+

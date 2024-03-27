@@ -10,10 +10,13 @@
 #include "GameManager.h"
 #include "AffichageManager.h"
 #include "menuManager.h"
+#include <SDL_image.h>
+#include "TextureManager.h"
 
 
 int main()
 {
+    
     Initializer(); 
     TextInitializer();
 
@@ -32,8 +35,12 @@ int main()
             srand(time(NULL));
             ClearScreen();
 
+            SetTexture();
+            SDL_RenderCopy(renderer, terrainTexture, NULL, NULL);
+
             ShipManager();
-            playerShip = setShip(playerX, playerY, 50, 25);
+            playerShip = setShip(playerX, playerY, 50, 50);
+
             UpdateTirPosition();
             UpdatePos();
         
@@ -42,7 +49,7 @@ int main()
 
             Afichage(); // Fonction qui appelle toutes les fonctions d'affichage
             
-
+            
             SDL_RenderPresent(renderer);
             compteurFrame += 1;
             SDL_Delay(10);

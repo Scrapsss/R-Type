@@ -4,6 +4,7 @@
 #include "Movement.h"
 #include "TirManager.h"
 #include <stdlib.h>
+#include "TextureManager.h"
 
 // D�claration de la position des projectiles
 int projectileX;
@@ -53,8 +54,8 @@ void UpdateTirPosition()
             }
 
             projectilesListe[i].x += 12;
-            SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
-            SDL_RenderFillRect(renderer, &projectilesListe[i]);
+            
+            SDL_RenderCopy(renderer, tirTexture, NULL, &projectilesListe[i]);
         }
     }
     

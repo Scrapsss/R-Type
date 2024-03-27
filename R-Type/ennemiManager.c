@@ -10,6 +10,7 @@
 #include "GameManager.h"
 #include "AffichageManager.h"
 #include "Collision.h"
+#include "TextureManager.h"
 
 // D�claration de la position des ennemis
 int ennemiX;
@@ -22,6 +23,7 @@ int vitesseEnnemi = 1;
 
 niveauActuel = 1;
 int compteurVague = 0;
+int kmBeforeVague = 0;
 
 // Fonction qui cr�e et affiche les ennemis
 SDL_Rect setEnnemi()
@@ -29,7 +31,11 @@ SDL_Rect setEnnemi()
     ennemiY = (rand() % (250));
     ennemiX = (rand() % (500));
 
-    SDL_Rect ennemi = { ennemiX+1400, ennemiY+150, 30, 30 };
+    SDL_Rect ennemi = { ennemiX+1400, ennemiY+150, 40, 40 };
+    SDL_RenderCopy(renderer, ennemiTexture, NULL, &ennemi);
+
+    kmBeforeVague = compteurFrame;
+
     return ennemi;
 }
 
@@ -101,8 +107,7 @@ void DeplacementEnnemi()
         }
 
         ennemiListe[i].x -= 3;
-        SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
-        SDL_RenderFillRect(renderer, &ennemiListe[i]);
+        SDL_RenderCopy(renderer, ennemiTexture, NULL, &ennemiListe[i]);
     }
     for (int j = 0; j < nbEnnemis; j++)
     {

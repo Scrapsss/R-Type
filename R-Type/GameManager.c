@@ -9,4 +9,3 @@
 #include <SDL.h>
 
 
-// Ici on met les fonctions principales du jeu genre gestion du respaw / game over / menu ...

@@ -4,6 +4,10 @@
 #include "WindowManager.h"
 #include "ScoreManager.h"
 #include "AffichageManager.h"
+#include "Collision.h"
+
+
+int pourcentagePrecision = 0;
 
 void TextInitializer()
 {
@@ -31,7 +35,7 @@ int InitTTF() {
 
 // Fonction pour charger la police
 TTF_Font* LoadFont() {
-    font = TTF_OpenFont("C:/Users/ecampestrini/Desktop/R-Type/src/GODOFWAR.ttf", 24);
+    font = TTF_OpenFont("C:/Users/elize/Documents/R-Type/src/GODOFWAR.ttf", 24);
     if (font == NULL) {
         printf("Erreur lors du chargement de la police : %s\n", TTF_GetError());
         return NULL;
@@ -56,6 +60,39 @@ void AfficherScore(SDL_Renderer* renderer, int scorePlayer1, TTF_Font* font) {
         }
         else {
             SDL_Rect textRect = { 575, 20, surfaceMessage->w, surfaceMessage->h };
+            SDL_RenderCopy(renderer, message, NULL, &textRect);
+
+            // Libérer la surface et la texture
+            SDL_FreeSurface(surfaceMessage);
+            SDL_DestroyTexture(message);
+        }
+    }
+}
+
+
+void AfficherPourcentage() {
+    SDL_Color textColor = { 255, 255, 255 }; // Couleur du texte (blanc)
+
+    if (nbTirs != 0)
+    {
+        pourcentagePrecision = (float)(scorePlayer1 / 5) / (float)nbTirs  * 100;
+    }
+    
+
+    char scoreText[100];
+    snprintf(scoreText, sizeof(scoreText), "%d %%", pourcentagePrecision);
+
+    SDL_Surface* surfaceMessage = TTF_RenderText_Solid(font, scoreText, textColor);
+    if (surfaceMessage == NULL) {
+        printf("Erreur lors du rendu du texte : %s\n", TTF_GetError());
+    }
+    else {
+        SDL_Texture* message = SDL_CreateTextureFromSurface(renderer, surfaceMessage);
+        if (message == NULL) {
+            printf("Erreur lors de la création de la texture du texte : %s\n", SDL_GetError());
+        }
+        else {
+            SDL_Rect textRect = { 30, 550, surfaceMessage->w, surfaceMessage->h };
             SDL_RenderCopy(renderer, message, NULL, &textRect);
 
             // Libérer la surface et la texture

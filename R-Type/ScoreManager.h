@@ -7,3 +7,4 @@ void TextInitializer();
 int InitTTF();
 TTF_Font* LoadFont();
 void AfficherScore(SDL_Renderer* renderer, int scorePlayer1, TTF_Font* font);
+void AfficherPourcentage();
