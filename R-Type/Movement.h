@@ -7,6 +7,7 @@ extern int playerY;
 // Déclaration de la vitesse du joueur
 extern int playerDx;
 extern int playerDy;
+extern int Quit;
 
 extern int compteurFrame;
 

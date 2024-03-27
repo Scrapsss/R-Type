@@ -8,3 +8,4 @@ void UpdateEnnemiPosition();
 void DeplacementEnnemi();
 extern int compteurVague;
 extern int nbEnnemis;
+extern int niveauActuel;

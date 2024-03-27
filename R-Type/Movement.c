@@ -21,6 +21,8 @@ int StateSpace = 0;
 int compteur = 0;
 int compteurFrame = 0;
 
+int Quit = 0;
+
 void KeyDownCheck(SDL_Event event)
 {
     if (event.key.keysym.sym == SDLK_UP)
@@ -46,6 +48,11 @@ void KeyDownCheck(SDL_Event event)
     if (event.key.keysym.sym == SDLK_SPACE)
     {
         StateSpace = 1;
+    }
+
+    if (event.key.keysym.sym == SDLK_ESCAPE)
+    {
+        Quit = 1;
     }
 }
 

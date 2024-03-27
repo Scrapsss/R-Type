@@ -10,12 +10,17 @@
 #include "GameManager.h"
 #include "AffichageManager.h"
 
+
 int main()
 {
     Initializer(); 
     TextInitializer();
     while (1)
     {
+        if (Quit == 1)
+        {
+            break;
+        }
         while (Player1Life != 0)
         {
             srand(time(NULL));
@@ -26,7 +31,6 @@ int main()
             UpdateTirPosition();
             UpdatePos();
         
-
             CheckCollisions();
             CollisionWithShip();
 
@@ -35,13 +39,18 @@ int main()
             SDL_RenderPresent(renderer);
             compteurFrame += 1;
             SDL_Delay(10);
+
+            if (Quit == 1)
+            {
+                break;
+            }
     
         }
+        niveauActuel = 1;
         nbTirs = 0;
         scorePlayer1 = 0;
         compteurFrame = 0;
-        printf("Perdu");
-        Player1Life = 3;
+        //Player1Life = 3;
     }
 
     return 0;
