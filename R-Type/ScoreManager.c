@@ -31,7 +31,7 @@ int InitTTF() {
 
 // Fonction pour charger la police
 TTF_Font* LoadFont() {
-    font = TTF_OpenFont("C:/Users/ecampestrini/Desktop/R-Type/src/GODOFWAR.ttf", 24);
+    font = TTF_OpenFont("C:/Users/mbernard/Documents/GODOFWAR.ttf", 24);
     if (font == NULL) {
         printf("Erreur lors du chargement de la police : %s\n", TTF_GetError());
         return NULL;
@@ -40,7 +40,7 @@ TTF_Font* LoadFont() {
 }
 
 void AfficherScore(SDL_Renderer* renderer, int scorePlayer1, TTF_Font* font) {
-    SDL_Color textColor = { 0, 0, 0 }; // Couleur du texte (noir)
+    SDL_Color textColor = { 255, 255, 255 }; // Couleur du texte (blanc)
 
     char scoreText[100];
     snprintf(scoreText, sizeof(scoreText), "SCORE : %d", scorePlayer1);

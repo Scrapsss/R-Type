@@ -19,13 +19,14 @@ int main()
 
     while (1)
     {
-        ButtonMenu();
-        Buttons();
-
         if (Quit == 1)
         {
             break;
         }
+
+        ButtonMenu();
+        Buttons();
+
         while (Player1Life != 0)
         {
             srand(time(NULL));
@@ -56,7 +57,7 @@ int main()
         nbTirs = 0;
         scorePlayer1 = 0;
         compteurFrame = 0;
-        //Player1Life = 3;
+        ClearScreen();
     }
 
     return 0;

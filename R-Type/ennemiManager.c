@@ -26,10 +26,10 @@ int compteurVague = 0;
 // Fonction qui cr�e et affiche les ennemis
 SDL_Rect setEnnemi()
 {
-    ennemiY = (rand() % (500));
+    ennemiY = (rand() % (250));
     ennemiX = (rand() % (500));
 
-    SDL_Rect ennemi = { ennemiX+1400, ennemiY, 30, 30 };
+    SDL_Rect ennemi = { ennemiX+1400, ennemiY+150, 30, 30 };
     return ennemi;
 }
 

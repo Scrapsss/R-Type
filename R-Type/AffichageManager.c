@@ -15,6 +15,7 @@ Player1Life = 0;
 
 void Afichage()
 {
+    AfficherBordure();
     AfficherVie(renderer, font);
     AfficherNiveau(renderer, font);
     AfficherScore(renderer, scorePlayer1, font);
@@ -23,7 +24,7 @@ void Afichage()
 
 // Affichage de le vie du joueur :
 void AfficherVie(SDL_Renderer* renderer, TTF_Font* font) {
-    SDL_Color textColor = { 0, 0, 0 }; // Couleur du texte (noir)
+    SDL_Color textColor = { 255, 255, 255 }; // Couleur du texte (blanc)
 
     char scoreText[100];
     snprintf(scoreText, sizeof(scoreText), "Vies    :    %d", Player1Life);
@@ -53,7 +54,7 @@ void AfficherVie(SDL_Renderer* renderer, TTF_Font* font) {
 
 // Affichage du niveau :
 void AfficherNiveau(SDL_Renderer* renderer, TTF_Font* font) {
-    SDL_Color textColor = { 0, 0, 0 }; // Couleur du texte (noir)
+    SDL_Color textColor = { 255, 255, 255 }; // Couleur du texte (blanc)
 
     char scoreText[100];
     snprintf(scoreText, sizeof(scoreText), "Niveau    :    %d", niveauActuel);
@@ -71,7 +72,7 @@ void AfficherNiveau(SDL_Renderer* renderer, TTF_Font* font) {
         }
         else
         {
-            SDL_Rect textRect = { 560, 500, surfaceMessage->w + 6, surfaceMessage->h + 6 };
+            SDL_Rect textRect = { 560, 525, surfaceMessage->w + 6, surfaceMessage->h + 6 };
             SDL_RenderCopy(renderer, message, NULL, &textRect);
 
             // Libérer la surface et la texture
@@ -83,7 +84,7 @@ void AfficherNiveau(SDL_Renderer* renderer, TTF_Font* font) {
 
 // Affichage des stats :
 void AfficherStats(SDL_Renderer* renderer, TTF_Font* font) {
-    SDL_Color textColor = { 0, 0, 0 }; // Couleur du texte (noir)
+    SDL_Color textColor = { 255, 255, 255}; // Couleur du texte (blanc)
 
     char scoreText[100];
     snprintf(scoreText, sizeof(scoreText), "Shots Fired    :    %d            Kills    :    %d            km    :    %d", nbTirs, scorePlayer1 / 5, compteurFrame / 300);
@@ -101,7 +102,7 @@ void AfficherStats(SDL_Renderer* renderer, TTF_Font* font) {
         }
         else
         {
-            SDL_Rect textRect = { 420, 570, surfaceMessage->w, surfaceMessage->h };
+            SDL_Rect textRect = { 230, 570, surfaceMessage->w, surfaceMessage->h };
             SDL_RenderCopy(renderer, message, NULL, &textRect);
 
             // Libérer la surface et la texture
@@ -109,4 +110,13 @@ void AfficherStats(SDL_Renderer* renderer, TTF_Font* font) {
             SDL_DestroyTexture(message);
         }
     }
+}
+
+void AfficherBordure()
+{
+    SDL_Rect bordureHaute = { 0, 0, 1200, 50 };
+    SDL_Rect bordureBasse = { 0, 525, 1200, 125 };
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+    SDL_RenderFillRect(renderer, &bordureHaute);
+    SDL_RenderFillRect(renderer, &bordureBasse);
 }

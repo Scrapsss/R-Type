@@ -6,6 +6,7 @@
 #include "ScoreManager.h"
 #include <SDL_ttf.h>
 #include "AffichageManager.h"
+#include "Movement.h"
 
 void ButtonMenu()
 {
@@ -20,6 +21,11 @@ void ButtonMenu()
             if (x > 100 && x < 500 && y > 380 && y < 480)
             {
                 Player1Life = 3;
+            }
+
+            if (x > 700 && x < 1100 && y > 380 && y < 480)
+            {
+                Quit = 1;
             }
         }
     }

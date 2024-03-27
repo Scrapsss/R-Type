@@ -112,12 +112,12 @@ void ShipManager()
 
 void UpdatePos()
 {
-    if (playerY <= 0)
+    if (playerY <= 50)
     {
         StateUp = 0;
     }
 
-    if (playerY >= 600 - 25)
+    if (playerY >= 525 - 25)
     {
         StateDown = 0;
     }

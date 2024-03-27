@@ -7,6 +7,7 @@ void AfficherVie(SDL_Renderer* renderer, TTF_Font* font);
 void Afichage();
 void AfficherNiveau(SDL_Renderer* renderer, TTF_Font* font);
 void AfficherStats(SDL_Renderer* renderer, TTF_Font* font);
+void AfficherBordure();
 
 SDL_Rect playerShip;
 int Player1Life;
