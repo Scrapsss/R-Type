@@ -17,7 +17,7 @@ int ennemiY;
 
 int compteurEnnemi = 0;
 int compteurliste = 0;
-int nbEnnemis = 5;
+int nbEnnemis = 0;
 int vitesseEnnemi = 1;
 
 niveauActuel = 1;

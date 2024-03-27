@@ -5,6 +5,7 @@
 #include "GameManager.h"
 #include "AffichageManager.h"
 #include "Collision.h"
+#include "Movement.h"
 
 scorePlayer1 = 0;
 int PlayerDeathState = 0;
@@ -41,7 +42,13 @@ void CollisionWithShip()
 			{
 				Player1Life -= 1;
 				PlayerDeathState = 1;
-				ennemiListe[i].w = 0;
+				playerX = 100;
+				playerY = 300;
+				SDL_Delay(1000);
+				for (int j = 0; j < 100; j++)
+				{
+					ennemiListe[j].w = 0;
+				}
 			}
 		}
 	}

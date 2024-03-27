@@ -14,28 +14,35 @@ int main()
 {
     Initializer(); 
     TextInitializer();
-
     while (1)
     {
-        srand(time(NULL));
-        ClearScreen();
+        while (Player1Life != 0)
+        {
+            srand(time(NULL));
+            ClearScreen();
 
-        ShipManager();
-        playerShip = setShip(playerX, playerY, 50, 25);
-        UpdateTirPosition();
-        EnnemiManager();
-        UpdatePos();
+            ShipManager();
+            playerShip = setShip(playerX, playerY, 50, 25);
+            UpdateTirPosition();
+            UpdatePos();
         
 
-        CheckCollisions();
-        CollisionWithShip();
+            CheckCollisions();
+            CollisionWithShip();
 
-        Afichage(); // Fonction qui appelle toutes les fonctions d'affichage
+            Afichage(); // Fonction qui appelle toutes les fonctions d'affichage
 
-        SDL_RenderPresent(renderer);
-        compteurFrame += 1;
-        SDL_Delay(10);
+            SDL_RenderPresent(renderer);
+            compteurFrame += 1;
+            SDL_Delay(10);
     
+        }
+        nbTirs = 0;
+        scorePlayer1 = 0;
+        compteurFrame = 0;
+        printf("Perdu");
+        Player1Life = 3;
     }
+
     return 0;
 }
