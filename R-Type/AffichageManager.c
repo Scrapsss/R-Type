@@ -11,7 +11,7 @@
 
 
 // On initialise la vie du joueur à 3
-Player1Life = 3;
+Player1Life = 0;
 
 void Afichage()
 {

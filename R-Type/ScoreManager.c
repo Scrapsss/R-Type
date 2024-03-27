@@ -31,7 +31,7 @@ int InitTTF() {
 
 // Fonction pour charger la police
 TTF_Font* LoadFont() {
-    TTF_Font* font = TTF_OpenFont("C:/Users/mbernard/Documents/American_Captain.ttf", 24);
+    font = TTF_OpenFont("C:/Users/ecampestrini/Desktop/R-Type/src/GODOFWAR.ttf", 24);
     if (font == NULL) {
         printf("Erreur lors du chargement de la police : %s\n", TTF_GetError());
         return NULL;

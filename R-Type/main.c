@@ -9,14 +9,19 @@
 #include "ScoreManager.h"
 #include "GameManager.h"
 #include "AffichageManager.h"
+#include "menuManager.h"
 
 
 int main()
 {
     Initializer(); 
     TextInitializer();
+
     while (1)
     {
+        ButtonMenu();
+        Buttons();
+
         if (Quit == 1)
         {
             break;
@@ -35,6 +40,7 @@ int main()
             CollisionWithShip();
 
             Afichage(); // Fonction qui appelle toutes les fonctions d'affichage
+            
 
             SDL_RenderPresent(renderer);
             compteurFrame += 1;
