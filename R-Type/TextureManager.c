@@ -1,5 +1,7 @@
 #include "WindowManager.h"
 #include "TextureManager.h"
+#include "AffichageManager.h"
+
 
 void SetTexture()
 {

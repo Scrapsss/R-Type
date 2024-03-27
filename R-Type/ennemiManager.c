@@ -1,6 +1,5 @@
 ﻿#include <stdio.h>
 #include <SDL.h>
-#include <SDL_mixer.h>
 #include "WindowManager.h"
 #include "Movement.h"
 #include "TirManager.h"
@@ -34,7 +33,6 @@ SDL_Rect setEnnemi()
     ennemiX = (rand() % (500));
 
     SDL_Rect ennemi = { ennemiX+1400, ennemiY+150, 40, 40 };
-    SDL_RenderCopy(renderer, ennemiTexture, NULL, &ennemi);
 
     kmBeforeVague = compteurFrame;
 

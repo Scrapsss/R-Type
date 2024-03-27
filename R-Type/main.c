@@ -19,6 +19,7 @@ int main()
     
     Initializer(); 
     TextInitializer();
+    SetTexture();
 
     while (1)
     {
@@ -35,7 +36,7 @@ int main()
             srand(time(NULL));
             ClearScreen();
 
-            SetTexture();
+            
             SDL_RenderCopy(renderer, terrainTexture, NULL, NULL);
 
             ShipManager();
