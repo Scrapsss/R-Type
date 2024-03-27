@@ -16,7 +16,7 @@ int ennemiY;
 
 int compteurEnnemi = 0;
 int compteurliste = 0;
-int nbEnnemis = 10;
+int nbEnnemis = 5;
 int vitesseEnnemi = 1;
 
 niveauActuel = 1;
@@ -55,6 +55,7 @@ void UpdateEnnemiPosition()
             if (compteurVague % 3 == 0)
             {
                 niveauActuel += 1;
+                nbEnnemis = 5;
             }
 
             compteurEnnemi = 0;
