@@ -6,3 +6,5 @@ SDL_Rect setEnnemi();
 int EnnemiManager();
 void UpdateEnnemiPosition();
 void DeplacementEnnemi();
+extern int compteurVague;
+extern int nbEnnemis;

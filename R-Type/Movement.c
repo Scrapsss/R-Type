@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "Movement.h"
 #include "TirManager.h"
+#include "ennemiManager.h"
 
 // Déclaration de la position du joueur
 int playerX = 100;
@@ -126,4 +127,5 @@ void UpdatePos()
 
     playerX += playerDx * (StateRight - StateLeft);
     playerY += playerDy * (StateDown - StateUp);
+    UpdateEnnemiPosition();
 }

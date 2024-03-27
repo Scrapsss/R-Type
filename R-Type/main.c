@@ -21,11 +21,11 @@ int main()
         ClearScreen();
 
         ShipManager();
-        UpdatePos();
         playerShip = setShip(playerX, playerY, 50, 25);
         UpdateTirPosition();
         EnnemiManager();
-        UpdateEnnemiPosition();
+        UpdatePos();
+        
 
         CheckCollisions();
         CollisionWithShip();

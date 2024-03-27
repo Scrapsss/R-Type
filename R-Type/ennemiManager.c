@@ -9,6 +9,7 @@
 #include <stdbool.h>
 #include "GameManager.h"
 #include "AffichageManager.h"
+#include "Collision.h"
 
 // D�claration de la position des ennemis
 int ennemiX;
@@ -51,26 +52,33 @@ void UpdateEnnemiPosition()
 
         if (compteurliste == nbEnnemis)
         {
-            compteurVague += 1;
-            if (compteurVague % 3 == 0)
+            if (PlayerDeathState == 0)
             {
+                compteurVague += 1;
+            }
+
+            if (compteurVague % 3 == 0 && compteurVague != 0)
+            {
+                compteurVague = 0;
                 niveauActuel += 1;
-                nbEnnemis = 5;
+                nbEnnemis = 0;
+                if (vitesseEnnemi < 3)
+                {
+                    vitesseEnnemi += 1;
+                }
             }
 
             compteurEnnemi = 0;
-            if (nbEnnemis >= 90)
+            if (nbEnnemis >= 90 || PlayerDeathState == 1)
             {
+                PlayerDeathState = 0;
                 EnnemiManager();
             }
             else
             {
                 nbEnnemis += 5;
                 EnnemiManager();
-                if (vitesseEnnemi < 3)
-                {
-                    vitesseEnnemi += 1;
-                }
+                
             }
         }
         compteurliste = 0;

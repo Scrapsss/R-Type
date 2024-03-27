@@ -4,8 +4,10 @@
 #include "TirManager.h"
 #include "GameManager.h"
 #include "AffichageManager.h"
+#include "Collision.h"
 
 scorePlayer1 = 0;
+int PlayerDeathState = 0;
 
 void CheckCollisions()
 {
@@ -38,6 +40,7 @@ void CollisionWithShip()
 			if (collisionShip)
 			{
 				Player1Life -= 1;
+				PlayerDeathState = 1;
 				ennemiListe[i].w = 0;
 			}
 		}
