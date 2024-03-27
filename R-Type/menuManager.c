@@ -33,14 +33,18 @@ void ButtonMenu()
 
 void Buttons()
 {
+    fond();
     ButtonQuit();
     AfficherQuit();
 
     ButtonPlay();
     AfficherPlay();
 
-    SDL_RenderPresent(renderer);
     ButtonLogo();
+    
+
+    SDL_RenderPresent(renderer);
+    
 }
 
 SDL_Rect ButtonLogo()

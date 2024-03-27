@@ -64,3 +64,12 @@ void AfficherQuit() {
         }
     }
 }
+
+SDL_Rect fond()
+{
+    SDL_Rect button = { 0, 0, 1200, 600 };
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+    SDL_RenderFillRect(renderer, &button);
+
+    return button;
+}
