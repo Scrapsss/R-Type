@@ -12,4 +12,3 @@ SDL_Surface* tirSurface;
 SDL_Texture*  tirTexture;
 
 
-void Texture();

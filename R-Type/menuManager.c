@@ -27,6 +27,10 @@ void ButtonMenu()
             {
                 Quit = 1;
             }
+            if (x > 1020 && x < 1145 && y > 35 && y < 75)
+            {
+                // Afficher les options
+            }
         }
     }
 }
@@ -34,6 +38,7 @@ void ButtonMenu()
 void Buttons()
 {
     fond();
+
     ButtonQuit();
     AfficherQuit();
 
@@ -41,6 +46,9 @@ void Buttons()
     AfficherPlay();
 
     ButtonLogo();
+
+    ButtonOption();
+    AfficherOption();
     
 
     SDL_RenderPresent(renderer);

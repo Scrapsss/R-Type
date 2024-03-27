@@ -73,3 +73,41 @@ SDL_Rect fond()
 
     return button;
 }
+
+void AfficherOption() {
+    SDL_Color textColor = { 255, 255, 255 }; 
+
+    char option[100];
+    snprintf(option, sizeof(option), "Options");
+
+    SDL_Surface* surfaceMessage = TTF_RenderText_Solid(font, option, textColor);
+    if (surfaceMessage == NULL)
+    {
+        printf("Erreur lors du rendu du texte : %s\n", TTF_GetError());
+    }
+    else {
+        SDL_Texture* message = SDL_CreateTextureFromSurface(renderer, surfaceMessage);
+        if (message == NULL)
+        {
+            printf("Erreur lors de la création de la texture du texte : %s\n", SDL_GetError());
+        }
+        else
+        {
+            SDL_Rect textRect = { 1030, 40, surfaceMessage->w , surfaceMessage->h  };
+            SDL_RenderCopy(renderer, message, NULL, &textRect);
+
+            // Libérer la surface et la texture
+            SDL_FreeSurface(surfaceMessage);
+            SDL_DestroyTexture(message);
+        }
+    }
+}
+
+SDL_Rect ButtonOption()
+{
+    SDL_Rect button = { 1020, 35, 125, 40 };
+    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+    SDL_RenderFillRect(renderer, &button);
+
+    return button;
+}

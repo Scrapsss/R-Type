@@ -15,8 +15,7 @@
 
 
 int main()
-{
-    
+{  
     Initializer(); 
     TextInitializer();
     SetTexture();
@@ -28,8 +27,8 @@ int main()
             break;
         }
 
-        ButtonMenu();
-        Buttons();
+        WhereIsThePlayer();
+        
 
         while (Player1Life != 0)
         {
@@ -69,4 +68,17 @@ int main()
     }
 
     return 0;
+}
+
+void WhereIsThePlayer()
+{
+    if (isInMenu == 1)
+    {
+        ButtonMenu();
+        Buttons();
+    }
+    if (isInOption == 1)
+    {
+        // afficher les options
+    }
 }
