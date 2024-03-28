@@ -10,6 +10,7 @@
 #include "Movement.h"
 #include "GameManager.h"
 #include "Collision.h"
+#include "TextureManager.h"
 
 int volumeSon = 100;
 
@@ -77,15 +78,15 @@ SDL_Rect ButtonLogo()
     SDL_Rect button = { 250, 50, 700, 250 };
     SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
     SDL_RenderFillRect(renderer, &button);
+    
 
     return button;
 }
 
 SDL_Rect ButtonQuit()
 {
-    SDL_Rect button = {700, 380, 400, 100};
-    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-    SDL_RenderFillRect(renderer, &button);
+    SDL_Rect button = {700, 375, 400, 150};
+    SDL_RenderCopy(renderer, buttonTexture, NULL, &button);
 
     return button;
 }
@@ -93,9 +94,8 @@ SDL_Rect ButtonQuit()
 
 SDL_Rect ButtonPlay()
 {
-    SDL_Rect button = { 100, 380, 400, 100 };
-    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-    SDL_RenderFillRect(renderer, &button);
+    SDL_Rect button = { 100, 375, 400, 150 };
+    SDL_RenderCopy(renderer, buttonTexture, NULL, &button);
 
     return button;
 }

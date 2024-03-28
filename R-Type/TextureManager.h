@@ -11,4 +11,6 @@ SDL_Texture* terrainTexture;
 SDL_Surface* tirSurface;
 SDL_Texture*  tirTexture;
 
+SDL_Surface* buttonSurface;
+SDL_Texture* buttonTexture;
 

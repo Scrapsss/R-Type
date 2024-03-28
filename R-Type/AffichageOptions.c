@@ -15,7 +15,7 @@ void AfficherOptionSon() {
     SDL_Color textColor = { 255, 255, 255 };
 
     char volume[200];
-    snprintf(volume, sizeof(volume), "Music Volume :                                 option 1               option 2                option 3");
+    snprintf(volume, sizeof(volume), "Music Volume :                                Faible                   Moyen                  Fort");
 
     SDL_Surface* surfaceMessage = TTF_RenderText_Solid(font, volume, textColor);
     if (surfaceMessage == NULL)

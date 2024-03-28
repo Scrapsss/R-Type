@@ -24,4 +24,9 @@ void SetTexture()
     tirSurface = SDL_LoadBMP("C:/Users/elize/Documents/R-Type/src/bullet.bmp");
     tirTexture = SDL_CreateTextureFromSurface(renderer, tirSurface);
     SDL_FreeSurface(tirSurface);
+    
+    // Boutons
+    buttonSurface = SDL_LoadBMP("C:/Users/elize/Documents/R-Type/src/button.bmp");
+    buttonTexture = SDL_CreateTextureFromSurface(renderer, buttonSurface);
+    SDL_FreeSurface(buttonSurface);
 }

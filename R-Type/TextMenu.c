@@ -5,9 +5,10 @@
 #include "WindowManager.h"
 #include "TextMenu.h"
 #include "ScoreManager.h"
+#include "TextureManager.h"
 
 void AfficherPlay() {
-    SDL_Color textColor = { 255, 255, 255 }; // Couleur du texte (noir)
+    SDL_Color textColor = { 0, 0, 0 }; // Couleur du texte (noir)
 
     char play[100];
     snprintf(play, sizeof(play), "PLAY");
@@ -25,7 +26,7 @@ void AfficherPlay() {
         }
         else
         {
-            SDL_Rect textRect = { 190, 375, surfaceMessage->w + 150, surfaceMessage->h + 70 };
+            SDL_Rect textRect = { 190, 390, surfaceMessage->w + 150, surfaceMessage->h + 70 };
             SDL_RenderCopy(renderer, message, NULL, &textRect);
 
             // Libérer la surface et la texture
@@ -37,7 +38,7 @@ void AfficherPlay() {
 
 
 void AfficherQuit() {
-    SDL_Color textColor = { 255, 255, 255 }; // Couleur du texte (noir)
+    SDL_Color textColor = { 0, 0, 0 }; // Couleur du texte (noir)
 
     char Quit[100];
     snprintf(Quit, sizeof(Quit), "Quit");
@@ -55,7 +56,7 @@ void AfficherQuit() {
         }
         else
         {
-            SDL_Rect textRect = { 800, 375, surfaceMessage->w + 150, surfaceMessage->h + 70 };
+            SDL_Rect textRect = { 800, 390, surfaceMessage->w + 150, surfaceMessage->h + 70 };
             SDL_RenderCopy(renderer, message, NULL, &textRect);
 
             // Libérer la surface et la texture
@@ -75,7 +76,7 @@ SDL_Rect fond()
 }
 
 void AfficherOption() {
-    SDL_Color textColor = { 255, 255, 255 }; 
+    SDL_Color textColor = { 0, 0, 0 }; 
 
     char option[100];
     snprintf(option, sizeof(option), "Options");
@@ -106,8 +107,7 @@ void AfficherOption() {
 SDL_Rect ButtonOption()
 {
     SDL_Rect button = { 1020, 35, 125, 40 };
-    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-    SDL_RenderFillRect(renderer, &button);
+    SDL_RenderCopy(renderer, buttonTexture, NULL, &button);
 
     return button;
 }

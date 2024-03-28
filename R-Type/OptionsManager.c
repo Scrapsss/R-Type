@@ -14,6 +14,7 @@
 #include "SoundChoice.h"
 #include "DifficultyChoice.h"
 #include "AffichageOptions.h"
+#include "TextureManager.h"
 
 
 void Options()
@@ -69,15 +70,14 @@ void OptionsChoice()
 
 SDL_Rect ButtonVersMenu()
 {
-    SDL_Rect button = { 30, 20, 220, 45 };
-    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-    SDL_RenderFillRect(renderer, &button);
+    SDL_Rect button = { 32, 21, 220, 45 };
+    SDL_RenderCopy(renderer, buttonTexture, NULL, &button);
 
     return button;
 }
 
 void AfficherRetourVersMenu() {
-    SDL_Color textColor = { 255, 255, 255 };
+    SDL_Color textColor = { 0, 0, 0 };
 
     char gameOver[100];
     snprintf(gameOver, sizeof(gameOver), "Back To Menu");
