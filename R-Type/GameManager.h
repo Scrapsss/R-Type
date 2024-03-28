@@ -2,3 +2,4 @@
 
 int isInMenu;
 int isInOption;
+int isDead;

@@ -7,6 +7,9 @@
 #include <SDL_ttf.h>
 #include "AffichageManager.h"
 #include "Movement.h"
+#include "GameManager.h"
+#include "Collision.h"
+
 
 void ButtonMenu()
 {
@@ -20,6 +23,11 @@ void ButtonMenu()
             Uint32 buttons = SDL_GetMouseState(&x, &y);
             if (x > 100 && x < 500 && y > 380 && y < 480)
             {
+                niveauActuel = 1;
+                compteurFrame = 0;
+                nbTirs = 0;
+                scorePlayer1 = 0;
+                isInMenu = 0;
                 Player1Life = 3;
             }
 
@@ -29,6 +37,7 @@ void ButtonMenu()
             }
             if (x > 1020 && x < 1145 && y > 35 && y < 75)
             {
+                isInMenu = 0;
                 // Afficher les options
             }
         }

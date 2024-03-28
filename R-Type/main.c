@@ -12,10 +12,29 @@
 #include "menuManager.h"
 #include <SDL_image.h>
 #include "TextureManager.h"
+#include "GameOver.h"
+
+void WhereIsThePlayer()
+{
+    if (isInMenu == 1)
+    {
+        ButtonMenu();
+        Buttons();
+    }
+    if (isInOption == 1)
+    {
+        // afficher les options
+    }
+    if (isDead == 1)
+    {
+        GameOver();
+    }
+}
 
 
 int main()
 {  
+    isInMenu = 1;
     Initializer(); 
     TextInitializer();
     SetTexture();
@@ -29,9 +48,10 @@ int main()
 
         WhereIsThePlayer();
         
-
         while (Player1Life != 0)
         {
+
+            isInMenu = 0;
             srand(time(NULL));
             ClearScreen();
 
@@ -60,25 +80,17 @@ int main()
             }
     
         }
-        niveauActuel = 1;
-        nbTirs = 0;
-        scorePlayer1 = 0;
-        compteurFrame = 0;
+
+        if (isInMenu == 0 && isInOption == 0)
+        {
+            isDead = 1;
+        }
+
+        
+
         ClearScreen();
     }
 
     return 0;
 }
 
-void WhereIsThePlayer()
-{
-    if (isInMenu == 1)
-    {
-        ButtonMenu();
-        Buttons();
-    }
-    if (isInOption == 1)
-    {
-        // afficher les options
-    }
-}
