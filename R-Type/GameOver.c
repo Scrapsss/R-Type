@@ -11,13 +11,19 @@
 #include "menuManager.h"
 #include "GameManager.h"
 #include "Collision.h"
-
+#include <SDL_mixer.h>
 
 
 void GameOver()
 {
-    fond();
+    Mix_Chunk* death = NULL;
+    Mix_AllocateChannels(15);
+    death = Mix_LoadMUS("C:/Users/elize/Documents/R-Type/src/PlayerDeath.mp3");
+    Mix_VolumeChunk(death, MIX_MAX_VOLUME - volumeSon);
+    Mix_PlayChannel(-1, death, 0);
 
+    fond();
+    Mix_HaltMusic();
     RetourMenu();
     ButtonRetourMenu();
     AfficherRetourMenu();

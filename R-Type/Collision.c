@@ -7,9 +7,13 @@
 #include "AffichageManager.h"
 #include "Collision.h"
 #include "Movement.h"
+#include "TextureManager.h"
+#include "WindowManager.h"
 
 scorePlayer1 = 0;
 int PlayerDeathState = 0;
+
+SDL_Texture* explosionFrames[5];
 
 void CheckCollisions()
 {
@@ -26,13 +30,23 @@ void CheckCollisions()
 					
 					Mix_Music* explosion2 = NULL;
 					Mix_AllocateChannels(15);
+					explosion2 = Mix_LoadWAV("C:/Users/elize/Documents/R-Type/src/Bounce.wav");
 					
-					explosion2 = Mix_LoadWAV("C:/Users/Scrap/Documents/Projet R-Type/R-Type/src/Bounce.wav");
-					
+					// Affichage de l'explosion
+					for (int k = 0; k < 5; k++)
+					{
+						SDL_Rect button = { ennemiListe[j].x, ennemiListe[j].y, 40, 40 };
+						SDL_RenderCopy(renderer, explosionFrames[k], NULL, &(SDL_Rect){ennemiListe[j].x, ennemiListe[j].y, 40, 40});
+						SDL_RenderPresent(renderer);
+					}
+
 					Mix_PlayChannel(-1, explosion2, 0);
 					projectilesListe[i].w = 0;
 					ennemiListe[j].w = 0;
 					scorePlayer1 += 5;
+
+					
+
 				}
 			}
 		}

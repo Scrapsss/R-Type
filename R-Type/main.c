@@ -46,6 +46,7 @@ int main()
         {
             break;
         }
+
         WhereIsThePlayer();
         
         while (Player1Life != 0)
@@ -86,9 +87,9 @@ int main()
         if (isInMenu == 0 && isInOption == 0)
         {
             isDead = 1;
+            
         }
 
-        
 
         ClearScreen();
     }

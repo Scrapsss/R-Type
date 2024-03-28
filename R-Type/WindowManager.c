@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <SDL.h>
-#include <SDL_mixer.h>
 #include "WindowManager.h"
 #include "TextureManager.h"
+#include "Collision.h"
+#include "menuManager.h"
+#include <SDL_mixer.h>
 
 int InitWindow()
 {
@@ -48,6 +50,10 @@ int Initializer()
     {
         window = CreateWindow(); //On crée la fenêtre
         renderer = CreateRenderer(window);
+        Mix_Chunk* death = NULL;
+        Mix_AllocateChannels(15);
+        death = Mix_LoadWAV("C:/Users/elize/Documents/R-Type/src/PlayerDeath.wav");
+        
         
     }
 
@@ -63,6 +69,5 @@ int Initializer()
 void ClearScreen()
 {
     // Clear rendu + set white color 
-    
     SDL_RenderClear(renderer);
 }

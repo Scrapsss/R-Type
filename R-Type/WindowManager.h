@@ -9,3 +9,4 @@ int Initializer();
 void ClearScreen();
 SDL_Renderer* CreateRenderer(SDL_Window* window);
 SDL_Window* CreateWindow();
+
