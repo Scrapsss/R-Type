@@ -11,6 +11,7 @@
 #include "AffichageManager.h"
 #include "Collision.h"
 #include "TextureManager.h"
+#include "DifficultyChoice.h"
 
 // D�claration de la position des ennemis
 int ennemiX;
@@ -19,7 +20,7 @@ int ennemiY;
 int compteurEnnemi = 0;
 int compteurliste = 0;
 int nbEnnemis = 0;
-int vitesseEnnemi = 1;
+float vitesseEnnemi = 2;
 
 niveauActuel = 1;
 int compteurVague = 0;
@@ -68,9 +69,10 @@ void UpdateEnnemiPosition()
                 compteurVague = 0;
                 niveauActuel += 1;
                 nbEnnemis = 0;
-                if (vitesseEnnemi < 3)
+                if (vitesseEnnemi < 2000)
                 {
-                    vitesseEnnemi += 1;
+                   
+                    vitesseEnnemi += difficulteSpeed;
                 }
             }
 
@@ -82,7 +84,7 @@ void UpdateEnnemiPosition()
             }
             else
             {
-                nbEnnemis += 5;
+                nbEnnemis += difficulteMob;
                 EnnemiManager();
                 
             }
@@ -106,7 +108,7 @@ void DeplacementEnnemi()
             continue;
         }
 
-        ennemiListe[i].x -= 3;
+        ennemiListe[i].x -= vitesseEnnemi;
         SDL_RenderCopy(renderer, ennemiTexture, NULL, &ennemiListe[i]);
     }
     for (int j = 0; j < nbEnnemis; j++)

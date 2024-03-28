@@ -15,6 +15,9 @@
 
 int DifficultyCocheX = 460;
 
+int difficulteMob = 3;
+float difficulteSpeed = 0.2;
+
 SDL_Rect CocheDifficulty(int x)
 {
     SDL_Rect button1 = { x, 305, 20, 20 };
@@ -54,16 +57,19 @@ void ChoixDifficultee(int x, int y)
     if (x > 455 && x < 485 && y > 300 && y < 330)
     {
         DifficultyCocheX = 460;
-        // changer la difficultée ici
+        difficulteMob = 3;
+        difficulteSpeed = 0.2;
     }
     if (x > 680 && x < 710 && y > 300 && y < 330)
     {
         DifficultyCocheX = 685;
-        // changer la difficultée ici
+        difficulteMob = 5;
+        difficulteSpeed = 0.5;
     }
     if (x > 915 && x < 945 && y > 300 && y < 330)
     {
         DifficultyCocheX = 920;
-        // changer la difficultée ici
+        difficulteMob = 10;
+        difficulteSpeed = 1;
     }
 }

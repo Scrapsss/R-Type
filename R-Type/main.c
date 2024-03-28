@@ -59,7 +59,7 @@ int main()
             SDL_RenderCopy(renderer, terrainTexture, NULL, NULL);
 
             ShipManager();
-            playerShip = setShip(playerX, playerY, 50, 50);
+            playerShip = setShip(playerX, playerY, 65, 50);
 
             UpdateTirPosition();
             UpdatePos();

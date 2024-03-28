@@ -27,7 +27,7 @@ void CheckCollisions()
 					Mix_Music* explosion2 = NULL;
 					Mix_AllocateChannels(15);
 					
-					explosion2 = Mix_LoadWAV("C:/Users/elize/Documents/R-Type/src/Bounce.wav");
+					explosion2 = Mix_LoadWAV("C:/Users/Scrap/Documents/Projet R-Type/R-Type/src/Bounce.wav");
 					
 					Mix_PlayChannel(-1, explosion2, 0);
 					projectilesListe[i].w = 0;
