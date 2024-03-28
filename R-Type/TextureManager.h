@@ -22,6 +22,8 @@ void TextureGame();
 void SetTexture();
 void TextureExplosion();
 
+SDL_Rect explosionFrames[5];
+
 
 // les images de l'explosion :
 SDL_Surface* explosion1Surface;

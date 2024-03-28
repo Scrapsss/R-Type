@@ -118,4 +118,11 @@ void DeplacementEnnemi()
             compteurliste += 1;
         }
     }
+    if (hasTouchedEnnemi != 0)
+    {
+        //Affichage de l'explosion
+        
+
+  
+    }
 }

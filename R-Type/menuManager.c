@@ -11,6 +11,7 @@
 #include "Collision.h"
 #include "TextureManager.h"
 #include <SDL_mixer.h>
+#include "GameOver.h"
 
 int volumeSon = 120;
 Mix_Music* Ambiance = NULL;
@@ -33,8 +34,16 @@ void ButtonMenu()
                 scorePlayer1 = 0;
                 isInMenu = 0;
                 Player1Life = 3;
+
+                MusiqueMort = 0;
                 
-                Ambiance = Mix_LoadMUS("C:/Users/Scrap/Documents/Projet R-Type/R-Type/src/PromptoSong.mp3");
+                StateUp = 0;
+                StateDown = 0;
+                StateLeft = 0;
+                StateRight = 0;
+                StateSpace = 0;
+
+                Ambiance = Mix_LoadMUS("C:/Users/elize/Documents/R-Type/src/PromptoSong.mp3");
                 Mix_VolumeMusic(MIX_MAX_VOLUME - volumeSon);
                 Mix_PlayMusic(Ambiance, -1);
                 

@@ -41,8 +41,10 @@ int main()
     TextInitializer();
     SetTexture();
 
+
     while (1)
     {
+
 
         if (Quit == 1)
         {
@@ -58,7 +60,7 @@ int main()
             srand(time(NULL));
             ClearScreen();
 
-            
+           
             SDL_RenderCopy(renderer, terrainTexture, NULL, NULL);
 
             ShipManager();
@@ -67,11 +69,12 @@ int main()
             UpdateTirPosition();
             UpdatePos();
         
-            CheckCollisions();
-            CollisionWithShip();
+            
 
             Afichage(); // Fonction qui appelle toutes les fonctions d'affichage
             
+            CheckCollisions();
+            CollisionWithShip();
             
             SDL_RenderPresent(renderer);
             compteurFrame += 1;
@@ -83,10 +86,6 @@ int main()
             }
     
         }
-
-        
-        
-
 
         if (isInMenu == 0 && isInOption == 0)
         {
