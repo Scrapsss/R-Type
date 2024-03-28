@@ -71,8 +71,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\SDL2-2.30.1\include;C:\Users\mbernard\Downloads\SDL2-2.30.1\include;C:\Dossier\SDL2-2.30.1\include;C:\Dossier\SDL2_ttf-2.22.0\include;C:\Users\Scrap\Downloads\Setup\SDL2-2.30.1\include;C:\Dossier\SDL2_image-2.8.2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\SDL2-2.30.1\lib\x64;C:\Users\mbernard\Downloads\SDL2-2.30.1\lib\x64;C:\Dossier\SDL2-2.30.1\lib\x64;C:\Dossier\SDL2_ttf-2.22.0\lib\x64;C:\Users\Scrap\Downloads\Setup\SDL2-2.30.1\lib\x64;C:\Dossier\SDL2_image-2.8.2\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\SDL2-2.30.1\include;C:\Users\mbernard\Downloads\SDL2-2.30.1\include;C:\Dossier\SDL2-2.30.1\include;C:\Dossier\SDL2_ttf-2.22.0\include;C:\Users\Scrap\Downloads\Setup\SDL2-2.30.1\include;C:\Dossier\SDL2_image-2.8.2\include;C:\Dossier\SDL2_mixer-2.8.0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\SDL2-2.30.1\lib\x64;C:\Users\mbernard\Downloads\SDL2-2.30.1\lib\x64;C:\Dossier\SDL2-2.30.1\lib\x64;C:\Dossier\SDL2_ttf-2.22.0\lib\x64;C:\Users\Scrap\Downloads\Setup\SDL2-2.30.1\lib\x64;C:\Dossier\SDL2_image-2.8.2\lib\x64;C:\Dossier\SDL2_mixer-2.8.0\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -133,13 +133,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AffichageManager.c" />
+    <ClCompile Include="AffichageOptions.c" />
     <ClCompile Include="Collision.c" />
+    <ClCompile Include="DifficultyChoice.c" />
     <ClCompile Include="ennemiManager.c" />
     <ClCompile Include="GameManager.c" />
     <ClCompile Include="GameOver.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="menuManager.c" />
     <ClCompile Include="Movement.c" />
+    <ClCompile Include="SoundChoice.c" />
+    <ClCompile Include="OptionsManager.c" />
     <ClCompile Include="ScoreManager.c" />
     <ClCompile Include="setShip.c" />
     <ClCompile Include="TextMenu.c" />
@@ -149,12 +153,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AffichageManager.h" />
+    <ClInclude Include="AffichageOptions.h" />
     <ClInclude Include="Collision.h" />
+    <ClInclude Include="DifficultyChoice.h" />
     <ClInclude Include="ennemiManager.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GameOver.h" />
     <ClInclude Include="menuManager.h" />
     <ClInclude Include="Movement.h" />
+    <ClInclude Include="SoundChoice.h" />
+    <ClInclude Include="OptionsManager.h" />
     <ClInclude Include="ScoreManager.h" />
     <ClInclude Include="setShip.h" />
     <ClInclude Include="TextMenu.h" />

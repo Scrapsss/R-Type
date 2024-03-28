@@ -1,6 +1,3 @@
-#include <SDL.h>
-#include <stdio.h>
-#include "menuManager.h"
 #include "WindowManager.h"
 #include "TextMenu.h"
 #include "ScoreManager.h"
@@ -10,63 +7,17 @@
 #include "GameOver.h"
 #include "menuManager.h"
 #include "GameManager.h"
-#include "Collision.h"
+#include "OptionsManager.h"
+#include "DifficultyChoice.h"
 
 
-
-void GameOver()
-{
-    fond();
-
-    RetourMenu();
-    ButtonRetourMenu();
-    AfficherRetourMenu();
-    AfficherGameOver();
-    AfficherScore(renderer, scorePlayer1, font);
-    AfficherStats(renderer, font);
-    AfficherPourcentage();
-
-    SDL_RenderPresent(renderer);
-
-}
-
-
-void RetourMenu()
-{
-    SDL_Event event;
-    int x, y;
-
-    while (SDL_PollEvent(&event))
-    {
-        if (event.type == SDL_MOUSEBUTTONDOWN)
-        {
-            Uint32 buttons = SDL_GetMouseState(&x, &y);
-            if (x > 450 && x < 750 && y > 400 && y < 475)
-            {
-                isDead = 0;
-                isInMenu = 1;
-            }
-
-        }
-    }
-}
-
-SDL_Rect ButtonRetourMenu()
-{
-    SDL_Rect button = { 450, 400, 300, 75 };
-    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-    SDL_RenderFillRect(renderer, &button);
-
-    return button;
-}
-
-void AfficherRetourMenu() {
+void AfficherOptionSon() {
     SDL_Color textColor = { 255, 255, 255 };
 
-    char gameOver[100];
-    snprintf(gameOver, sizeof(gameOver), "Retour au menu");
+    char volume[200];
+    snprintf(volume, sizeof(volume), "Music Volume :                                 option 1               option 2                option 3");
 
-    SDL_Surface* surfaceMessage = TTF_RenderText_Solid(font, gameOver, textColor);
+    SDL_Surface* surfaceMessage = TTF_RenderText_Solid(font, volume, textColor);
     if (surfaceMessage == NULL)
     {
         printf("Erreur lors du rendu du texte : %s\n", TTF_GetError());
@@ -79,7 +30,7 @@ void AfficherRetourMenu() {
         }
         else
         {
-            SDL_Rect textRect = { 500, 425, surfaceMessage->w , surfaceMessage->h };
+            SDL_Rect textRect = { 35, 200, surfaceMessage->w , surfaceMessage->h };
             SDL_RenderCopy(renderer, message, NULL, &textRect);
 
             // Libérer la surface et la texture
@@ -89,13 +40,13 @@ void AfficherRetourMenu() {
     }
 }
 
-void AfficherGameOver() {
+void AfficherOptionDificultee() {
     SDL_Color textColor = { 255, 255, 255 };
 
-    char gameOver[100];
-    snprintf(gameOver, sizeof(gameOver), "GAME OVER ...");
+    char volume[200];
+    snprintf(volume, sizeof(volume), "Difficulty :                                      Easy                     Normal                 Hard");
 
-    SDL_Surface* surfaceMessage = TTF_RenderText_Solid(font, gameOver, textColor);
+    SDL_Surface* surfaceMessage = TTF_RenderText_Solid(font, volume, textColor);
     if (surfaceMessage == NULL)
     {
         printf("Erreur lors du rendu du texte : %s\n", TTF_GetError());
@@ -108,7 +59,7 @@ void AfficherGameOver() {
         }
         else
         {
-            SDL_Rect textRect = { 420, 80, surfaceMessage->w + 200 , surfaceMessage->h + 100};
+            SDL_Rect textRect = { 35, 300, surfaceMessage->w , surfaceMessage->h };
             SDL_RenderCopy(renderer, message, NULL, &textRect);
 
             // Libérer la surface et la texture

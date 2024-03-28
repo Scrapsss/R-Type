@@ -38,6 +38,7 @@ void ButtonMenu()
             if (x > 1020 && x < 1145 && y > 35 && y < 75)
             {
                 isInMenu = 0;
+                isInOption = 1;
                 // Afficher les options
             }
         }

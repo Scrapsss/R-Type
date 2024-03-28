@@ -22,6 +22,7 @@ void WhereIsThePlayer()
     }
     if (isInOption == 1)
     {
+        Options();
         // afficher les options
     }
     if (isDead == 1)
@@ -40,11 +41,11 @@ int main()
 
     while (1)
     {
+
         if (Quit == 1)
         {
             break;
         }
-
         WhereIsThePlayer();
         
         while (Player1Life != 0)
@@ -79,6 +80,8 @@ int main()
             }
     
         }
+        
+
 
         if (isInMenu == 0 && isInOption == 0)
         {

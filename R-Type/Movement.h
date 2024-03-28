@@ -9,6 +9,13 @@ extern int playerDx;
 extern int playerDy;
 extern int Quit;
 
+
+extern int StateUp;
+extern int StateDown;
+extern int StateLeft;
+extern int StateRight;
+extern int StateSpace;
+
 extern int compteurFrame;
 
 void KeyDownCheck(SDL_Event event);
