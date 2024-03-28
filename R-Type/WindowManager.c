@@ -56,6 +56,8 @@ int Initializer()
         SDL_Quit();
         return -1;
     }
+
+    
 }
 
 void ClearScreen()

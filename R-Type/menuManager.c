@@ -1,5 +1,6 @@
 #include <SDL.h>
 #include <stdio.h>
+#include <SDL_mixer.h>
 #include "menuManager.h"
 #include "WindowManager.h"
 #include "TextMenu.h"
@@ -29,6 +30,9 @@ void ButtonMenu()
                 scorePlayer1 = 0;
                 isInMenu = 0;
                 Player1Life = 3;
+                Mix_Music* Ambiance = NULL;
+                Ambiance = Mix_LoadMUS("C:/Users/Scrap/Documents/Projet R-Type/R-Type/src/Spider Dance.mp3");
+                Mix_PlayMusic(Ambiance, -1);
             }
 
             if (x > 700 && x < 1100 && y > 380 && y < 480)
