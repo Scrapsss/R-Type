@@ -13,7 +13,7 @@
 #include "OptionsManager.h"
 #include "SoundChoice.h"
 
-int cocheX = 460;
+int cocheX = 685;
 
 SDL_Rect CocheVolume(int x)
 {
@@ -55,16 +55,16 @@ void ChoixSon(int x, int y)
     if (x > 455 && x < 485 && y > 200 && y < 230)
     {
         cocheX = 460;
-        // changer le volume ici
+        volumeSon = 120;
     }
     if (x > 680 && x < 710 && y > 200 && y < 230)
     {
         cocheX = 685;
-        // changer le volume ici
+        volumeSon = 100;
     }
     if (x > 915 && x < 945 && y > 200 && y < 230)
     {
         cocheX = 920;
-        // changer le volume ici
+        volumeSon = 50;
     }
 }

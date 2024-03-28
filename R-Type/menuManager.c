@@ -11,6 +11,7 @@
 #include "GameManager.h"
 #include "Collision.h"
 
+int volumeSon = 100;
 
 void ButtonMenu()
 {
@@ -31,8 +32,11 @@ void ButtonMenu()
                 isInMenu = 0;
                 Player1Life = 3;
                 Mix_Music* Ambiance = NULL;
-                Ambiance = Mix_LoadMUS("C:/Users/Scrap/Documents/Projet R-Type/R-Type/src/Spider Dance.mp3");
+                Ambiance = Mix_LoadMUS("C:/Users/elize/Documents/R-Type/src/Spider Dance.mp3");
+                printf("%d", MIX_MAX_VOLUME);
+                Mix_VolumeMusic(MIX_MAX_VOLUME - volumeSon);
                 Mix_PlayMusic(Ambiance, -1);
+                
             }
 
             if (x > 700 && x < 1100 && y > 380 && y < 480)
@@ -43,7 +47,6 @@ void ButtonMenu()
             {
                 isInMenu = 0;
                 isInOption = 1;
-                // Afficher les options
             }
         }
     }
