@@ -34,7 +34,7 @@ void ButtonMenu()
                 isInMenu = 0;
                 Player1Life = 3;
                 
-                Ambiance = Mix_LoadMUS("C:/Users/elize/Documents/R-Type/src/PromptoSong.mp3");
+                Ambiance = Mix_LoadMUS("C:/Users/Scrap/Documents/Projet R-Type/R-Type/src/PromptoSong.mp3");
                 Mix_VolumeMusic(MIX_MAX_VOLUME - volumeSon);
                 Mix_PlayMusic(Ambiance, -1);
                 

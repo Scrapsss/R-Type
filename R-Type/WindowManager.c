@@ -49,12 +49,7 @@ int Initializer()
     if (InitWindow() == 0)
     {
         window = CreateWindow(); //On crée la fenêtre
-        renderer = CreateRenderer(window);
-        Mix_Chunk* death = NULL;
-        Mix_AllocateChannels(15);
-        death = Mix_LoadWAV("C:/Users/elize/Documents/R-Type/src/PlayerDeath.wav");
-        
-        
+        renderer = CreateRenderer(window);       
     }
 
     if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0) {

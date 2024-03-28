@@ -13,6 +13,8 @@
 #include "TextureManager.h"
 #include "GameOver.h"
 
+Mix_Music* death = NULL;
+
 void WhereIsThePlayer()
 {
     if (isInMenu == 1)
@@ -81,6 +83,8 @@ int main()
             }
     
         }
+
+        
         
 
 

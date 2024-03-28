@@ -13,17 +13,12 @@
 #include "Collision.h"
 #include <SDL_mixer.h>
 
+int MusiqueMort = 0;
+Mix_Music* death;
 
 void GameOver()
 {
-    Mix_Chunk* death = NULL;
-    Mix_AllocateChannels(15);
-    death = Mix_LoadMUS("C:/Users/elize/Documents/R-Type/src/PlayerDeath.mp3");
-    Mix_VolumeChunk(death, MIX_MAX_VOLUME - volumeSon);
-    Mix_PlayChannel(-1, death, 0);
-
     fond();
-    Mix_HaltMusic();
     RetourMenu();
     ButtonRetourMenu();
     AfficherRetourMenu();
@@ -32,7 +27,17 @@ void GameOver()
     AfficherStats(renderer, font);
     AfficherPourcentage();
 
+    if (MusiqueMort < 1)
+    {
+        death = Mix_LoadMUS("C:/Users/Scrap/Documents/Projet R-Type/R-Type/src/PlayerDeath.mp3");
+        Mix_VolumeMusic(MIX_MAX_VOLUME - volumeSon);
+        Mix_PlayMusic(death, 0);;
+        MusiqueMort += 1;
+    }
+
     SDL_RenderPresent(renderer);
+
+    
 
 }
 
