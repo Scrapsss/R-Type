@@ -29,4 +29,9 @@ void SetTexture()
     buttonSurface = SDL_LoadBMP("C:/Users/elize/Documents/R-Type/src/button.bmp");
     buttonTexture = SDL_CreateTextureFromSurface(renderer, buttonSurface);
     SDL_FreeSurface(buttonSurface);
+
+    // logo
+    logoSurface = SDL_LoadBMP("C:/Users/elize/Documents/R-Type/src/logo.bmp");
+    logoTexture = SDL_CreateTextureFromSurface(renderer, logoSurface);
+    SDL_FreeSurface(logoSurface);
 }

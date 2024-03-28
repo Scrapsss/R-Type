@@ -76,8 +76,7 @@ void Buttons()
 SDL_Rect ButtonLogo()
 {
     SDL_Rect button = { 250, 50, 700, 250 };
-    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-    SDL_RenderFillRect(renderer, &button);
+    SDL_RenderCopy(renderer, logoTexture, NULL, &button);
     
 
     return button;

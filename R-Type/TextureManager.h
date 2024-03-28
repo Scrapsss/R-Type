@@ -14,3 +14,5 @@ SDL_Texture*  tirTexture;
 SDL_Surface* buttonSurface;
 SDL_Texture* buttonTexture;
 
+SDL_Surface* logoSurface;
+SDL_Texture* logoTexture;
