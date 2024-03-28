@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <SDL.h>
+#include <SDL_mixer.h>
 #include "WindowManager.h"
 #include "TextureManager.h"
+
 int InitWindow()
 {
     // init SDL
@@ -47,6 +49,12 @@ int Initializer()
         window = CreateWindow(); //On crée la fenêtre
         renderer = CreateRenderer(window);
         
+    }
+
+    if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0) {
+        printf("Failed to initialize SDL_mixer: %s\n", Mix_GetError());
+        SDL_Quit();
+        return -1;
     }
 }
 

@@ -1,5 +1,6 @@
 #include <SDL.h>
 #include <stdio.h>
+#include <SDL_mixer.h>
 #include "ennemiManager.h"
 #include "TirManager.h"
 #include "GameManager.h"
@@ -22,6 +23,11 @@ void CheckCollisions()
 
 				if (collision)
 				{
+					Mix_Music* explosion = NULL;
+					Mix_Music* explosion2 = NULL;
+					explosion = Mix_LoadMUS("C:/Users/Scrap/Documents/Projet R-Type/R-Type/src/explosion_11.mp3");
+					explosion2 = Mix_LoadMUS("C:/Users/Scrap/Documents/Projet R-Type/R-Type/src/explosion_11.mp3");
+					Mix_PlayMusic(explosion, 1);
 					projectilesListe[i].w = 0;
 					ennemiListe[j].w = 0;
 					scorePlayer1 += 5;

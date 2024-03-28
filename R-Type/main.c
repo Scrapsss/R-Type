@@ -10,7 +10,6 @@
 #include "GameManager.h"
 #include "AffichageManager.h"
 #include "menuManager.h"
-#include <SDL_image.h>
 #include "TextureManager.h"
 #include "GameOver.h"
 
