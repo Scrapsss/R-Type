@@ -26,23 +26,21 @@ void CheckCollisions()
 				SDL_bool collision = SDL_HasIntersection(&projectilesListe[i], &ennemiListe[j]);
 
 				if (collision)
-				{
-					
+				{					
 					Mix_Music* explosion2 = NULL;
 					Mix_AllocateChannels(15);
-					explosion2 = Mix_LoadWAV("C:/Users/elize/Documents/R-Type/src/Bounce.wav");
-					
-					
+					explosion2 = Mix_LoadWAV("C:/Users/mbernard/Desktop/R-Type/src/Bounce.wav");
 
+					SDL_RenderCopy(renderer, explosion3Texture, NULL, &ennemiListe[j]);
+					SDL_RenderPresent(renderer);
+					
 					hasTouchedEnnemi = j;
 
 					Mix_PlayChannel(-1, explosion2, 0);
+
 					projectilesListe[i].w = 0;
 					ennemiListe[j].w = 0;
 					scorePlayer1 += 5;
-
-					
-
 				}
 			}
 		}
@@ -62,6 +60,8 @@ void CollisionWithShip()
 				PlayerDeathState = 1;
 				playerX = 100;
 				playerY = 300;
+				SDL_RenderCopy(renderer, explosion3Texture, NULL, &playerShip);
+				SDL_RenderPresent(renderer);
 				SDL_Delay(1000);
 				for (int j = 0; j < 100; j++)
 				{

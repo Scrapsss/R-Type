@@ -135,4 +135,5 @@ void UpdatePos()
     playerX += playerDx * (StateRight - StateLeft);
     playerY += playerDy * (StateDown - StateUp);
     UpdateEnnemiPosition();
+    UpdateTirPosition();
 }

@@ -35,6 +35,7 @@ SDL_Rect ButtonDifficultyOption1()
 
     return button1;
 }
+
 SDL_Rect ButtonDifficultyOption2()
 {
     SDL_Rect button2 = { 680, 300, 30, 30 };
@@ -43,6 +44,7 @@ SDL_Rect ButtonDifficultyOption2()
 
     return button2;
 }
+
 SDL_Rect ButtonDifficultyOption3()
 {
     SDL_Rect button3 = { 915, 300, 30, 30 };

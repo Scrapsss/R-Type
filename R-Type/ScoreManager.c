@@ -35,7 +35,7 @@ int InitTTF() {
 
 // Fonction pour charger la police
 TTF_Font* LoadFont() {
-    font = TTF_OpenFont("C:/Users/elize/Documents/R-Type/src/GODOFWAR.ttf", 24);
+    font = TTF_OpenFont("C:/Users/mbernard/Desktop/R-Type/src/GODOFWAR.ttf", 24);
     if (font == NULL) {
         printf("Erreur lors du chargement de la police : %s\n", TTF_GetError());
         return NULL;
@@ -68,7 +68,6 @@ void AfficherScore(SDL_Renderer* renderer, int scorePlayer1, TTF_Font* font) {
         }
     }
 }
-
 
 void AfficherPourcentage() {
     SDL_Color textColor = { 255, 255, 255 }; // Couleur du texte (blanc)

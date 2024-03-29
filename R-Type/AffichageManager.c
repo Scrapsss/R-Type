@@ -86,9 +86,7 @@ void AfficherNiveau(SDL_Renderer* renderer, TTF_Font* font) {
 // Affichage des stats :
 void AfficherStats(SDL_Renderer* renderer, TTF_Font* font) {
     SDL_Color textColor = { 255, 255, 255}; // Couleur du texte (blanc)
-
     char scoreText[100];
-
     if (PlayerDeathState == 1)
     {
         compteurFrame = kmBeforeVague;

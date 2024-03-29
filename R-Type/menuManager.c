@@ -28,27 +28,12 @@ void ButtonMenu()
             Uint32 buttons = SDL_GetMouseState(&x, &y);
             if (x > 100 && x < 500 && y > 380 && y < 480)
             {
-                niveauActuel = 1;
-                compteurFrame = 0;
-                nbTirs = 0;
-                scorePlayer1 = 0;
-                isInMenu = 0;
-                Player1Life = 3;
+                Reset();
 
-                MusiqueMort = 0;
-                
-                StateUp = 0;
-                StateDown = 0;
-                StateLeft = 0;
-                StateRight = 0;
-                StateSpace = 0;
-
-                Ambiance = Mix_LoadMUS("C:/Users/elize/Documents/R-Type/src/PromptoSong.mp3");
+                Ambiance = Mix_LoadMUS("C:/Users/mbernard/Desktop/R-Type/src/PromptoSong.mp3");
                 Mix_VolumeMusic(MIX_MAX_VOLUME - volumeSon);
                 Mix_PlayMusic(Ambiance, -1);
-                
             }
-
             if (x > 700 && x < 1100 && y > 380 && y < 480)
             {
                 Quit = 1;
@@ -98,7 +83,6 @@ SDL_Rect ButtonQuit()
 
     return button;
 }
-
 
 SDL_Rect ButtonPlay()
 {

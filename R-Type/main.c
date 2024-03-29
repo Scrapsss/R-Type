@@ -33,19 +33,36 @@ void WhereIsThePlayer()
     }
 }
 
+void Jeu()
+{
+    SDL_RenderCopy(renderer, terrainTexture, NULL, NULL);
+
+    ShipManager();
+    playerShip = setShip(playerX, playerY, 65, 50);
+
+    UpdatePos();
+
+    Afichage(); // Fonction qui appelle toutes les fonctions d'affichage
+
+    CheckCollisions();
+    CollisionWithShip();
+}
+
+void MenuCheck()
+{
+    if (isInMenu == 0 && isInOption == 0)
+    {
+        isDead = 1;
+    }
+}
 
 int main()
 {  
     isInMenu = 1;
     Initializer(); 
-    TextInitializer();
-    SetTexture();
-
-
+    
     while (1)
     {
-
-
         if (Quit == 1)
         {
             break;
@@ -55,48 +72,19 @@ int main()
         
         while (Player1Life != 0)
         {
-
             isInMenu = 0;
             srand(time(NULL));
             ClearScreen();
-
-           
-            SDL_RenderCopy(renderer, terrainTexture, NULL, NULL);
-
-            ShipManager();
-            playerShip = setShip(playerX, playerY, 65, 50);
-
-            UpdateTirPosition();
-            UpdatePos();
-        
-            
-
-            Afichage(); // Fonction qui appelle toutes les fonctions d'affichage
-            
-            CheckCollisions();
-            CollisionWithShip();
+            Jeu();
             
             SDL_RenderPresent(renderer);
             compteurFrame += 1;
             SDL_Delay(10);
-
-            if (Quit == 1)
-            {
-                break;
-            }
-    
         }
-
-        if (isInMenu == 0 && isInOption == 0)
-        {
-            isDead = 1;
-            
-        }
-
-
+        MenuCheck();
+        
         ClearScreen();
     }
-
     return 0;
 }
 

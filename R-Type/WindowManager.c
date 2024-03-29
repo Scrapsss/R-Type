@@ -58,6 +58,8 @@ int Initializer()
         return -1;
     }
 
+    TextInitializer();
+    SetTexture();
     
 }
 

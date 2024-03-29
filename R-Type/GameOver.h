@@ -6,3 +6,4 @@ void AfficherGameOver();
 void GameOver();
 void AfficherRetourMenu();
 int MusiqueMort;
+void Reset();

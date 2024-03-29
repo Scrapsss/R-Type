@@ -51,6 +51,37 @@ int EnnemiManager()
     return compteurEnnemi;
 }
 
+void VerificationDeplacement()
+{
+    if (PlayerDeathState == 0)
+    {
+        compteurVague += 1;
+    }
+
+    if (compteurVague % 3 == 0 && compteurVague != 0)
+    {
+        compteurVague = 0;
+        niveauActuel += 1;
+        nbEnnemis = 0;
+        if (vitesseEnnemi < 2000)
+        {
+
+            vitesseEnnemi += difficulteSpeed;
+        }
+    }
+    compteurEnnemi = 0;
+    if (nbEnnemis >= 90 || PlayerDeathState == 1)
+    {
+        PlayerDeathState = 0;
+        EnnemiManager();
+    }
+    else
+    {
+        nbEnnemis += difficulteMob;
+        EnnemiManager();
+    }
+}
+
 void UpdateEnnemiPosition()
 {
     if (ennemiListe != NULL)
@@ -59,35 +90,7 @@ void UpdateEnnemiPosition()
 
         if (compteurliste == nbEnnemis)
         {
-            if (PlayerDeathState == 0)
-            {
-                compteurVague += 1;
-            }
-
-            if (compteurVague % 3 == 0 && compteurVague != 0)
-            {
-                compteurVague = 0;
-                niveauActuel += 1;
-                nbEnnemis = 0;
-                if (vitesseEnnemi < 2000)
-                {
-                   
-                    vitesseEnnemi += difficulteSpeed;
-                }
-            }
-
-            compteurEnnemi = 0;
-            if (nbEnnemis >= 90 || PlayerDeathState == 1)
-            {
-                PlayerDeathState = 0;
-                EnnemiManager();
-            }
-            else
-            {
-                nbEnnemis += difficulteMob;
-                EnnemiManager();
-                
-            }
+            VerificationDeplacement();
         }
         compteurliste = 0;
     }  
@@ -117,12 +120,5 @@ void DeplacementEnnemi()
         {
             compteurliste += 1;
         }
-    }
-    if (hasTouchedEnnemi != 0)
-    {
-        //Affichage de l'explosion
-        
-
-  
     }
 }
