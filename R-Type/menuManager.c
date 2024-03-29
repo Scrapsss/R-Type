@@ -30,7 +30,7 @@ void ButtonMenu()
             {
                 Reset();
 
-                Ambiance = Mix_LoadMUS("C:/Users/mbernard/Desktop/R-Type/src/PromptoSong.mp3");
+                Ambiance = Mix_LoadMUS("C:/Users/ecampestrini/Desktop/R-Type/src/PromptoSong.mp3");
                 Mix_VolumeMusic(MIX_MAX_VOLUME - volumeSon);
                 Mix_PlayMusic(Ambiance, -1);
             }

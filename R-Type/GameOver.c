@@ -29,7 +29,7 @@ void GameOver()
 
     if (MusiqueMort < 1)
     {
-        death = Mix_LoadMUS("C:/Users/mbernard/Desktop/R-Type/src/PlayerDeath.mp3");
+        death = Mix_LoadMUS("C:/Users/ecampestrini/Desktop/R-Type/src/PlayerDeath.mp3");
         Mix_VolumeMusic(MIX_MAX_VOLUME - volumeSon);
         Mix_PlayMusic(death, 0);;
         MusiqueMort += 1;

@@ -29,7 +29,7 @@ void CheckCollisions()
 				{					
 					Mix_Music* explosion2 = NULL;
 					Mix_AllocateChannels(15);
-					explosion2 = Mix_LoadWAV("C:/Users/mbernard/Desktop/R-Type/src/Bounce.wav");
+					explosion2 = Mix_LoadWAV("C:/Users/ecampestrini/Desktop/R-Type/src/Bounce.wav");
 
 					SDL_RenderCopy(renderer, explosion3Texture, NULL, &ennemiListe[j]);
 					SDL_RenderPresent(renderer);

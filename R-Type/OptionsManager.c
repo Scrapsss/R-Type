@@ -15,6 +15,8 @@
 #include "DifficultyChoice.h"
 #include "AffichageOptions.h"
 #include "TextureManager.h"
+#include "InputChoice.h"
+#include "InputOption.h"
 
 
 void Options()
@@ -23,14 +25,12 @@ void Options()
 
     OptionsChoice();
     
-    
     ButtonVersMenu();
     AfficherRetourVersMenu();
     
     ButtonSoundOption1();
     ButtonSoundOption2();
     ButtonSoundOption3();
-
     AfficherOptionSon();
     AfficherOptionDificultee();
 
@@ -40,8 +40,14 @@ void Options()
 
     CocheVolume(cocheX);
     CocheDifficulty(DifficultyCocheX);
-    
-
+    InputGauche();
+    InputDroite();
+    InputHaut();
+    InputBas();
+    InputTir();
+    CocheInput(cocheInputX);
+    AfficherChoixInput();
+    AfficherInput();
     SDL_RenderPresent(renderer);
 }
 
@@ -63,6 +69,7 @@ void OptionsChoice()
             
             ChoixSon(x, y);
             ChoixDifficultee(x, y);
+            ChoixInput(x, y, event);
 
         }
     }
